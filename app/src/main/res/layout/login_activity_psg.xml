@@ -27,7 +27,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/driver_btn"
+            android:id="@+id/driver_btn_psgAct"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:text="Водитель"
@@ -36,11 +36,11 @@
             android:layout_weight="1"
             />
         <Button
-            android:id="@+id/passenger_btn"
+            android:id="@+id/passenger_btn_psgAct"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="#f5bd1f"
-           android:text="Пасажир"
+            android:text="Пасажир"
             android:layout_gravity="center"
             android:layout_weight="1"
             ></Button>
@@ -52,15 +52,15 @@
         android:layout_marginTop="180dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
-    <EditText
-    android:layout_width="match_parent"
-        android:textAlignment="center"
-    android:layout_height="match_parent"
-    android:textSize="31sp"
-    android:layout_gravity="center"
-        android:layout_weight="1"
-    android:hint="Введите имя"
-    />
+        <EditText
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="match_parent"
+            android:textSize="31sp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:hint="Введите имя"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -71,11 +71,11 @@
         android:layout_marginRight="10dp">
 
         <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Введите фамилию"
-        android:textAlignment="center"
-        android:textSize="31sp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите фамилию"
+            android:textAlignment="center"
+            android:textSize="31sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -98,15 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="360dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Введите номер машини"
-            android:textAlignment="center"
-            android:textSize="31sp" />
-    </LinearLayout>
+        android:layout_marginRight="10dp"/>
 
 
 </RelativeLayout>
