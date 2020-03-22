@@ -1,4 +1,4 @@
-package ua.study.transporthelper;
+package ua.study.transporthelper.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import ua.study.transporthelper.Maps_fragment;
+import ua.study.transporthelper.R;
 
 public class Login_activity extends AppCompatActivity implements View.OnClickListener{
 
@@ -32,7 +35,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId())
         {
             case R.id.driver_btn:
-                intent = new Intent(this, MapsActivity.class);
+                intent = new Intent(this, Maps_fragment.class);
                 startActivity(intent);
 
                 break;

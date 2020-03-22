@@ -1,4 +1,4 @@
-package ua.study.transporthelper;
+package ua.study.transporthelper.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import ua.study.transporthelper.Maps_fragment;
+import ua.study.transporthelper.R;
 
 public class Passanger_activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,7 +41,7 @@ public class Passanger_activity extends AppCompatActivity implements View.OnClic
         switch (v.getId())
         {
             case R.id.set_place_btn:
-                intent = new Intent(this, MapsActivity.class);
+                intent = new Intent(this, Maps_fragment.class);
                 startActivity(intent);
                 break;
             case R.id.have_gone_btn:
