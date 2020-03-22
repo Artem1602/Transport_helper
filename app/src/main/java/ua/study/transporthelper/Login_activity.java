@@ -32,6 +32,8 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId())
         {
             case R.id.driver_btn:
+                intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.passenger_btn:
