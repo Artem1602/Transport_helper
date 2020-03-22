@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/MyBlue">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ваші данні:"
+        android:textSize="45dp"
+        android:paddingLeft="30dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:paddingTop="10dp"
+    />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="70dp">
+        <EditText
+            android:id="@+id/name_str"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Як до вас звертатися?"
+            android:textSize="27dp"
+            android:textAlignment="center"
+            android:maxLength="20"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:paddingLeft="15dp"
+        android:paddingTop="120dp"
+        android:paddingRight="15dp">
+        <EditText
+            android:id="@+id/number_str"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Ваш номер телефону"
+            android:textSize="27dp"
+            android:textAlignment="center"
+            android:maxLength="13"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:paddingLeft="15dp"
+        android:paddingTop="190dp"
+        android:paddingRight="15dp">
+        <Button
+            android:id="@+id/set_place_btn"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/button_set_psg"
+            android:text="Розміститися"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/MyBlue"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="256dp"
+        android:paddingRight="15dp"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="25dp"
+            android:text="Якщо ви вже знайшли водія, натисніть на кнопку знизу:"
+            android:paddingBottom="10dp"
+            />
+        <Button
+            android:id="@+id/have_gone_btn"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/button_set_psg"
+            android:text="Уже поїхав"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/MyBlue"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

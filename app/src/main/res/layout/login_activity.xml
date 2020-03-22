@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#007aa5"
+    android:background="@color/MyBlue"
     tools:context=".Login_activity">
     <LinearLayout
         android:layout_marginTop="250dp"
@@ -33,9 +33,10 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textSize="21dp"
             android:layout_weight="1"
             android:background="@drawable/button_left"
-            android:text="Водитель"
+            android:text="Водій"
 
             />
         <Button
@@ -43,7 +44,8 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button"
-           android:text="Пасажир"
+            android:text="Пасажир"
+            android:textSize="21dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             ></Button>
