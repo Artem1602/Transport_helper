@@ -31,7 +31,6 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         Intent intent;
-
         switch (v.getId())
         {
             case R.id.driver_btn:
