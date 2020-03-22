@@ -4,35 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/MyBlue">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints">
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ваші данні:"
-        android:textSize="45sp"
-        android:paddingLeft="30dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:paddingTop="10dp"
-    />
-
-</LinearLayout>
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ваші данні:"
+            android:textSize="45sp"
+            android:paddingLeft="30dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:paddingTop="10dp"
+            />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="70dp">
-        <EditText
+        android:paddingTop="80dp">
+        <TextView
             android:id="@+id/name_str"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="@string/user_name"
-            android:textSize="27sp"
+            android:textSize="30sp"
             android:textAlignment="center"
             android:maxLength="20"
             />
@@ -41,54 +41,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
         android:paddingLeft="15dp"
-        android:paddingTop="120dp"
-        android:paddingRight="15dp">
-        <EditText
-            android:id="@+id/number_str"
+        android:paddingTop="130dp"
+        android:paddingRight="15dp"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/str_number"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="@string/user_number"
-            android:textSize="27sp"
+            android:textSize="30sp"
             android:textAlignment="center"
             android:maxLength="13"
             />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:paddingLeft="15dp"
-        android:paddingTop="190dp"
-        android:paddingRight="15dp">
 
-        <Button
-            android:id="@+id/set_place_btn"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@drawable/button_set_psg"
-            android:text="@string/login_accept_btn"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:textColor="@color/MyBlue"
-            />
-
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="15dp"
-        android:paddingTop="256dp"
+        android:paddingTop="180dp"
         android:paddingRight="15dp"
         tools:ignore="MissingConstraints">
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:textSize="25sp"
-            android:text="Якщо ви вже знайшли водія, натисніть на кнопку знизу:"
+            android:paddingLeft="15dp"
+            android:text="@string/waiter"
+            android:paddingBottom="10dp"
+            />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="25sp"
+            android:paddingLeft="15dp"
+            android:text="@string/finder"
             android:paddingBottom="10dp"
             />
         <Button

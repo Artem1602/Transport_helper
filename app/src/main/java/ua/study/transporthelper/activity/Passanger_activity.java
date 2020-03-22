@@ -18,12 +18,12 @@ public class Passanger_activity extends AppCompatActivity implements View.OnClic
     private EditText number_str;
     private Button set_place_btn;
     //TODO Зделать блокировку или скритие кнопки при первом входе
-    private Button have_gone_btn;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.passenger_layout);
+        setContentView(R.layout.passenger_waiting_fragment);
 
         name_str = findViewById(R.id.name_str);
         number_str = findViewById(R.id.number_str);
@@ -31,8 +31,7 @@ public class Passanger_activity extends AppCompatActivity implements View.OnClic
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
 
-        have_gone_btn = findViewById(R.id.have_gone_btn);
-        have_gone_btn.setOnClickListener(this);
+
     }
 
     @Override
@@ -44,9 +43,7 @@ public class Passanger_activity extends AppCompatActivity implements View.OnClic
                 intent = new Intent(this, Maps_fragment.class);
                 startActivity(intent);
                 break;
-            case R.id.have_gone_btn:
 
-                break;
         }
     }
 }
