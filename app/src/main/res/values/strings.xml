@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Transport helper</string>
+    <string name="Driver">Водитель</string>
+    <string name="transport_helper">Transport Helper</string>
 </resources>

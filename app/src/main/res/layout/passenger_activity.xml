@@ -12,12 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ваші данні:"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:paddingLeft="30dp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:paddingTop="10dp"
     />
+
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="Як до вас звертатися?"
-            android:textSize="27dp"
+            android:textSize="27sp"
             android:textAlignment="center"
             android:maxLength="20"
             />
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="Ваш номер телефону"
-            android:textSize="27dp"
+            android:textSize="27sp"
             android:textAlignment="center"
             android:maxLength="13"
             />
@@ -62,16 +63,18 @@
         android:paddingLeft="15dp"
         android:paddingTop="190dp"
         android:paddingRight="15dp">
+
         <Button
             android:id="@+id/set_place_btn"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@drawable/button_set_psg"
             android:text="Розміститися"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textAlignment="center"
             android:textColor="@color/MyBlue"
             />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,7 +87,7 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:text="Якщо ви вже знайшли водія, натисніть на кнопку знизу:"
             android:paddingBottom="10dp"
             />
@@ -94,7 +97,7 @@
             android:layout_width="match_parent"
             android:background="@drawable/button_set_psg"
             android:text="Уже поїхав"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textAlignment="center"
             android:textColor="@color/MyBlue"
             />

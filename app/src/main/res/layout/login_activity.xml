@@ -13,11 +13,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Transport Helper"
+            android:text="@string/transport_helper"
             android:textSize="45sp"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:textAlignment="center"></TextView>
+            android:textAlignment="center">
+
+        </TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -33,7 +35,7 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="21dp"
+            android:textSize="21sp"
             android:layout_weight="1"
             android:background="@drawable/button_left"
             android:text="Водій"
@@ -45,10 +47,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button"
             android:text="Пасажир"
-            android:textSize="21dp"
+            android:textSize="21sp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            ></Button>
+            >
+
+        </Button>
     </LinearLayout>
 
 </RelativeLayout>
