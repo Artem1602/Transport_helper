@@ -39,7 +39,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case R.id.passenger_btn:
-                intent = new Intent(this, Passanger_activity.class);
+                intent = new Intent(this, Passanger_login_activity.class);
                 startActivity(intent);
                 break;
         }

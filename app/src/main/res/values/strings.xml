@@ -8,4 +8,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="waiter">Очікуйте на дзвінок від водія, та завчасно обговоріть місце зустрічі.</string>
     <string name="finder">Якщо ви вже знайшли водія, натисніть на кнопку знизу:</string>
+    <string name="confirm">Підтвердити</string>
 </resources>

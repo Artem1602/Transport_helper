@@ -68,7 +68,7 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
         switch (v.getId())
         {
             case R.id.confirm_btn:
-                //TODO Написать реализацию....
+                //TODO Написать реализацию... отправка на сервер
                 break;
         }
     }
