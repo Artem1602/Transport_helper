@@ -2,7 +2,11 @@ package ua.study.transporthelper;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,21 +15,28 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import ua.study.transporthelper.R;
+import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.Settings;
 
-public class Maps_fragment extends FragmentActivity implements OnMapReadyCallback {
+public class Maps_fragment extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
 
     private GoogleMap mMap;
+    private Button confirm_btn;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.maps_fragment);
+        setContentView(R.layout.passanger_map_layout);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.location_map);
         mapFragment.getMapAsync(this);
+
+        confirm_btn = findViewById(R.id.confirm_btn);
+        confirm_btn.setOnClickListener(this);
+
     }
 
     /**
@@ -51,4 +62,14 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
     }
 
 
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId())
+        {
+            case R.id.confirm_btn:
+                //TODO Написать реализацию
+                break;
+        }
+    }
 }

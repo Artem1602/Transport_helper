@@ -6,4 +6,6 @@
     <string name="user_number">Ваш номер телефону</string>
     <string name="login_accept_btn">Розміститися</string>
     <string name="title_activity_maps">Map</string>
+    <string name="Confirm_button">Підтвердити</string>
+    <string name="confirm">Підтвердити</string>
 </resources>
