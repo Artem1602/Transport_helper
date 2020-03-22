@@ -38,7 +38,8 @@ public class Passanger_activity extends AppCompatActivity implements View.OnClic
         switch (v.getId())
         {
             case R.id.set_place_btn:
-
+                intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
                 break;
             case R.id.have_gone_btn:
 

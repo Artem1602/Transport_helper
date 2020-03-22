@@ -2,4 +2,8 @@
     <string name="app_name">Transport helper</string>
     <string name="Driver">Водитель</string>
     <string name="transport_helper">Transport Helper</string>
+    <string name="user_name">Як до вас звертатися?</string>
+    <string name="user_number">Ваш номер телефону</string>
+    <string name="login_accept_btn">Розміститися</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
