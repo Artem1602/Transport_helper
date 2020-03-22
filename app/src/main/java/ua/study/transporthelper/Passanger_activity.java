@@ -20,7 +20,7 @@ public class Passanger_activity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.passenger_activity);
+        setContentView(R.layout.passenger_layout);
 
         name_str = findViewById(R.id.name_str);
         number_str = findViewById(R.id.number_str);

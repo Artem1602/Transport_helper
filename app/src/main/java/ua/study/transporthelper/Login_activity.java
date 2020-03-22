@@ -15,7 +15,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.login_layout);
 
         passenger_btn = findViewById(R.id.passenger_btn);
         passenger_btn.setOnClickListener(this);
