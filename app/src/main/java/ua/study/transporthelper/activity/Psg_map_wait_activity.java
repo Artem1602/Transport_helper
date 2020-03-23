@@ -1,4 +1,4 @@
-package ua.study.transporthelper;
+package ua.study.transporthelper.activity;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -17,14 +17,15 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import ua.study.transporthelper.activity.Login_activity;
-import ua.study.transporthelper.settings.Settings;
+import ua.study.transporthelper.R;
+import ua.study.transporthelper.settings.Test_settings;
 import ua.study.transporthelper.settings.User_info;
 
-public class Maps_fragment extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener {
+public class Psg_map_wait_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMapClickListener {
 
     private GoogleMap mMap;
     private Button confirm_btn;
+    private LatLng user_location;
 
 
     @Override
@@ -68,7 +69,7 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
 
         // Add a marker in Sydney and move the camera
 
-        LatLng cher = new LatLng(Settings.LATITUDE,Settings.LONGITUDE);
+        LatLng cher = new LatLng(Test_settings.LATITUDE, Test_settings.LONGITUDE);
         set_marker(cher);
 
     }
@@ -80,6 +81,8 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
         switch (v.getId())
         {
             case R.id.confirm_btn:
+                User_info.getInstance().setUser_location(user_location);
+
                 //TODO Написать реализацию... отправка на сервер
                 break;
         }
@@ -87,8 +90,14 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapLongClick(LatLng latLng) {
-        Log.d("SSSPPP",Double.toString(latLng.latitude) + "  " + Double.toString(latLng.longitude));
+        Log.d("SSSPPP",latLng.latitude + "  " + latLng.longitude);
+        user_location = latLng;
         set_marker(latLng);
+    }
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+       //TODO Чтоб юзеру было понятно что нужно зажать чтоб поставить точку можно выводить Toast о том что нужно делать
     }
 
     private  void set_marker(LatLng marker_position)

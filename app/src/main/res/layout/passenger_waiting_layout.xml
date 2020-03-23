@@ -28,13 +28,14 @@
         android:paddingRight="15dp"
         android:paddingTop="80dp">
         <TextView
-            android:id="@+id/name_str"
+            android:id="@+id/entered_name_str"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:hint="@string/user_name"
+            android:hint="@string/your_name"
             android:textSize="30sp"
             android:textAlignment="center"
             android:maxLength="20"
+            android:inputType="none"
             />
     </LinearLayout>
 
@@ -46,13 +47,14 @@
         android:paddingRight="15dp"
         tools:ignore="MissingConstraints">
         <TextView
-            android:id="@+id/str_number"
+            android:id="@+id/entered_number_str"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="@string/user_number"
             android:textSize="30sp"
             android:textAlignment="center"
             android:maxLength="13"
+            android:inputType="none"
             />
     </LinearLayout>
 
@@ -82,7 +84,7 @@
             android:text="@string/finder"
             android:textSize="25sp" />
         <Button
-            android:id="@+id/have_gone_btn"
+            android:id="@+id/find_car_btn"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@drawable/button_set_psg"

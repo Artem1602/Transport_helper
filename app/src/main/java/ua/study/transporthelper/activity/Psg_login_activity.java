@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import ua.study.transporthelper.Maps_fragment;
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.settings.User_info;
 
-public class Passanger_login_activity extends AppCompatActivity implements View.OnClickListener {
+public class Psg_login_activity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText name_str;
     private EditText number_str;
@@ -31,8 +31,6 @@ public class Passanger_login_activity extends AppCompatActivity implements View.
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
 
-
-
     }
 
     @Override
@@ -41,7 +39,17 @@ public class Passanger_login_activity extends AppCompatActivity implements View.
         switch (v.getId())
         {
             case R.id.set_place_btn:
-                intent = new Intent(this, Maps_fragment.class);
+                //Запись полей
+                //TODO Проверка правильности ввода полей
+                if(!name_str.getText().toString().isEmpty() || !name_str.getText().toString().isEmpty())
+                {
+                    Toast.makeText(this,"@strings/fill_all_fields",Toast.LENGTH_SHORT);
+                    break;
+                }
+                User_info.getInstance().setUser_name(name_str.getText().toString());
+                User_info.getInstance().setUser_number(number_str.getText().toString());
+
+                intent = new Intent(this, Psg_map_wait_activity.class);
                 startActivity(intent);
                 break;
 

@@ -5,9 +5,9 @@ import com.google.android.gms.maps.model.LatLng;
 public class User_info {
 
     private static final User_info user_info = new User_info();
-    public String user_number;
-    public String user_telephone;
-    public LatLng user_location;
+    private String user_name;
+    private String user_number;
+    private LatLng user_location;
 
     private User_info(){}
 
@@ -15,9 +15,15 @@ public class User_info {
         return user_info;
     }
 
-    public void setter(String user_number, String user_telephone, LatLng user_location) {
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public void setUser_number(String user_number) {
         this.user_number = user_number;
-        this.user_telephone = user_telephone;
+    }
+
+    public void setUser_location(LatLng user_location) {
         this.user_location = user_location;
     }
 

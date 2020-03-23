@@ -22,7 +22,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         <activity
-            android:name=".Maps_fragment"
+            android:name=".activity.Psg_map_wait_activity"
             android:label="@string/title_activity_maps"/>
 <!-- //TODO Проверка первого входа -->
         <activity android:name=".First_in_SP" />
@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Passanger_login_activity" />
+        <activity android:name=".activity.Psg_login_activity" />
 
     </application>
 
