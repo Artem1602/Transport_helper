@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,27 +13,31 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.Settings;
 
-public class Maps_fragment extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
+public class Maps_fragment extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener {
 
     private GoogleMap mMap;
     private Button confirm_btn;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.passanger_map_layout);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.location_map);
         mapFragment.getMapAsync(this);
+
+
+
+
 
         confirm_btn = findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(this);
@@ -51,13 +56,26 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.setMyLocationEnabled(true);
+        mMap.setOnMapLongClickListener(this);
+
+        UiSettings settings = mMap.getUiSettings();
+        settings.setMyLocationButtonEnabled(true);
+        settings.setCompassEnabled(true);
+
+
+
+
+
 
         // Add a marker in Sydney and move the camera
 
         LatLng cher = new LatLng(Settings.LATITUDE,Settings.LONGITUDE);
-        mMap.addMarker(new MarkerOptions().position(cher).title("You are gay"));
+        mMap.addMarker(new MarkerOptions().position(cher).title("Test"));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Settings.LATITUDE,Settings.LONGITUDE)));
+
 
     }
 
@@ -71,5 +89,10 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
                 //TODO Написать реализацию... отправка на сервер
                 break;
         }
+    }
+
+    @Override
+    public void onMapLongClick(LatLng latLng) {
+        Log.d("SSSPPP",Double.toString(latLng.latitude) + "  " + Double.toString(latLng.longitude));
     }
 }
