@@ -23,7 +23,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="5dp"
-        android:background="#359c5e"
+        android:background="@drawable/button_accept_psg"
         android:padding="8dp"
         android:text="@string/confirm"
         android:textColor="#ffffff" />
