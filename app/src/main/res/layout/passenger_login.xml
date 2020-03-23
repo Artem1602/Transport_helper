@@ -57,11 +57,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
+    android:orientation="vertical"
         android:paddingLeft="15dp"
         android:paddingTop="190dp"
-        android:paddingRight="15dp">
+        android:paddingRight="15dp"
+        tools:ignore="MissingConstraints">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="@string/notification"
+            android:paddingBottom="15dp"></TextView>
         <Button
             android:id="@+id/set_place_btn"
             android:layout_height="wrap_content"

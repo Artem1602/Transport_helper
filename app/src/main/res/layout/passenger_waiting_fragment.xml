@@ -73,14 +73,14 @@
             android:text="@string/waiter"
             android:paddingBottom="10dp"
             />
+
         <TextView
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textSize="25sp"
+            android:layout_height="wrap_content"
             android:paddingLeft="15dp"
+            android:paddingBottom="15dp"
             android:text="@string/finder"
-            android:paddingBottom="10dp"
-            />
+            android:textSize="25sp" />
         <Button
             android:id="@+id/have_gone_btn"
             android:layout_height="wrap_content"
