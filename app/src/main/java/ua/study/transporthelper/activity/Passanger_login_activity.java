@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ua.study.transporthelper.Maps_fragment;
 import ua.study.transporthelper.R;
+import ua.study.transporthelper.settings.User_info;
 
 public class Passanger_login_activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +30,7 @@ public class Passanger_login_activity extends AppCompatActivity implements View.
 
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
+
 
 
     }

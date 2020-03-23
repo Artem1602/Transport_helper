@@ -19,11 +19,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.Settings;
+import ua.study.transporthelper.settings.User_info;
 
 public class Maps_fragment extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener {
 
     private GoogleMap mMap;
     private Button confirm_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,18 +66,10 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);
 
-
-
-
-
-
         // Add a marker in Sydney and move the camera
 
         LatLng cher = new LatLng(Settings.LATITUDE,Settings.LONGITUDE);
-        mMap.addMarker(new MarkerOptions().position(cher).title("Test"));
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Settings.LATITUDE,Settings.LONGITUDE)));
-
+        set_marker(cher);
 
     }
 
@@ -94,5 +88,14 @@ public class Maps_fragment extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapLongClick(LatLng latLng) {
         Log.d("SSSPPP",Double.toString(latLng.latitude) + "  " + Double.toString(latLng.longitude));
+        set_marker(latLng);
+    }
+
+    private  void set_marker(LatLng marker_position)
+    {
+        mMap.clear();
+
+        mMap.addMarker(new MarkerOptions().position(marker_position));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
     }
 }

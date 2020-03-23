@@ -64,11 +64,11 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:paddingBottom="15dp"
             android:text="@string/notification"
-            android:paddingBottom="15dp"></TextView>
+            android:textSize="25sp"></TextView>
         <Button
             android:id="@+id/set_place_btn"
             android:layout_height="wrap_content"
