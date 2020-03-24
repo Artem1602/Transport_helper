@@ -12,4 +12,7 @@
     <string name="notification">Після того як ви натиснули на кнопку знизу, вас буде переміщено на карту. На карті Ви повині будете розміти точку там де Вам буде зручно підсісти в машину.</string>
     <string name="fill_all_fields">Заповніть всі поля</string>
     <string name="your_name">Ваше ім\'я</string>
+    <string name="number_example">+380*********</string>
+    <string name="title_activity_drv_map_activity">Map</string>
+    <string name="title_activity_driver_map_activity">Map</string>
 </resources>

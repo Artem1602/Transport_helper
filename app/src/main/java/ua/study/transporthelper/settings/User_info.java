@@ -9,6 +9,18 @@ public class User_info {
     private String user_number;
     private LatLng user_location;
 
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public String getUser_number() {
+        return user_number;
+    }
+
+    public LatLng getUser_location() {
+        return user_location;
+    }
+
     private User_info(){}
 
     public static User_info getInstance(){

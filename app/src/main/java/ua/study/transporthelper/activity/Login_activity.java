@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import ua.study.transporthelper.R;
+import ua.study.transporthelper.activity.Driver.Driver_map_activity;
+import ua.study.transporthelper.activity.Passanger.Psg_login_activity;
 
 public class Login_activity extends AppCompatActivity implements View.OnClickListener{
 
@@ -33,7 +35,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId())
         {
             case R.id.driver_btn:
-                intent = new Intent(this, Psg_map_wait_activity.class);
+                intent = new Intent(this, Driver_map_activity.class);
                 startActivity(intent);
 
                 break;
