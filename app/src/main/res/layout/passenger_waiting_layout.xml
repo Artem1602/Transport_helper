@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ваші данні:"
+            android:text="Ваші дані:"
             android:textSize="45sp"
             android:paddingLeft="30dp"
             android:textStyle="bold"
@@ -88,8 +88,8 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@drawable/button_set_psg"
-            android:text="Уже поїхав"
-            android:textSize="25sp"
+            android:text="Підтвредити виклик"
+            android:textSize="22sp"
             android:textAlignment="center"
             android:textColor="@color/MyBlue"
             />

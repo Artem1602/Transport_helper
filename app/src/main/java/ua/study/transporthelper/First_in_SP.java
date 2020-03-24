@@ -12,6 +12,8 @@ public class First_in_SP extends Activity {
     public static final String MY_SETTINGS = "settings";
     public static final String FIRST_VISIT_KEY = "hasVisited";
     private boolean has_visited;
+    private static final int CAMERA_PERMISSION_CODE = 100;
+    private static final int STORAGE_PERMISSION_CODE = 101;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class First_in_SP extends Activity {
             //TODO Вывод активити при первом запуске
 //            intent = new Intent(this,MainActivity.class);4
 //            startActivity(intent);
+
+
+
             SharedPreferences.Editor e = sp.edit();
             e.putBoolean(FIRST_VISIT_KEY, true);
             e.commit();
