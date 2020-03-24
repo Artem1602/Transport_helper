@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity;
+package ua.study.transporthelper.activity.Passanger;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,10 +34,14 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
     }
 
     public boolean NumberCheck(String number){
-
         if(number.length()==13){
             if(number.toCharArray()[0]=='+'||number.toCharArray()[1]=='3'||number.toCharArray()[2]=='8'||number.toCharArray()[3]=='0'){
-                return true;
+                for (int i = 1;number.length()<13;i++){
+                    if(!(number.toCharArray()[i]=='0')&&!(number.toCharArray()[i]=='1')&&!(number.toCharArray()[i]=='2')&&!(number.toCharArray()[i]=='3')&&!(number.toCharArray()[i]=='4')&&!(number.toCharArray()[i]=='5')
+                            &&!(number.toCharArray()[i]=='6')&&!(number.toCharArray()[i]=='7')&&!(number.toCharArray()[i]=='8')&&!(number.toCharArray()[i]=='9')){
+                        break;
+                    }
+                }
             }
         }
         return false;
@@ -50,23 +54,22 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         {
             case R.id.set_place_btn:
                 //Запись полей
-
-
-                if(!NumberCheck(name_str.getText().toString()))
-                {
-                    Toast.makeText(this,"Invalid phone number",Toast.LENGTH_LONG).show();
-                    break;
-                }
-
                 if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty())
                 {
                     Toast.makeText(this,"Заповніть всі поля",Toast.LENGTH_LONG).show();
                     break;
                 }
+
+                if(!NumberCheck(number_str.getText().toString()))
+                {
+                    Toast.makeText(this,"Invalid phone number",Toast.LENGTH_LONG).show();
+                    break;
+                }
+
                 User_info.getInstance().setUser_name(name_str.getText().toString());
                 User_info.getInstance().setUser_number(number_str.getText().toString());
 
-                intent = new Intent(this, Psg_map_wait_activity.class);
+                intent = new Intent(this, Psg_map_activity.class);
                 startActivity(intent);
                 break;
 

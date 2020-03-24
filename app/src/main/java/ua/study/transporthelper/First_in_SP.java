@@ -19,14 +19,13 @@ public class First_in_SP extends Activity {
         setContentView(R.layout.login_layout);
 
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS, Context.MODE_PRIVATE);
-        //First time?
         has_visited = sp.getBoolean(FIRST_VISIT_KEY, false);
 
         Intent intent;
         if(!has_visited)
         {
             //TODO Вывод активити при первом запуске
-//            intent = new Intent(this,MainActivity.class);
+//            intent = new Intent(this,MainActivity.class);4
 //            startActivity(intent);
             SharedPreferences.Editor e = sp.edit();
             e.putBoolean(FIRST_VISIT_KEY, true);
