@@ -34,12 +34,13 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
     }
 
     public boolean NumberCheck(String number){
+
         if(number.length()==13){
             if(number.toCharArray()[0]=='+'||number.toCharArray()[1]=='3'||number.toCharArray()[2]=='8'||number.toCharArray()[3]=='0'){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -51,15 +52,15 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
                 //Запись полей
 
 
-                if(NumberCheck(name_str.getText().toString()))
+                if(!NumberCheck(name_str.getText().toString()))
                 {
-                    Toast.makeText(this,"Invalid phone number",Toast.LENGTH_SHORT);
+                    Toast.makeText(this,"Invalid phone number",Toast.LENGTH_LONG).show();
                     break;
                 }
 
-                if(!name_str.getText().toString().isEmpty() && !name_str.getText().toString().isEmpty())
+                if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty())
                 {
-                    Toast.makeText(this,"@strings/fill_all_fields",Toast.LENGTH_SHORT);
+                    Toast.makeText(this,"Заповніть всі поля",Toast.LENGTH_LONG).show();
                     break;
                 }
                 User_info.getInstance().setUser_name(name_str.getText().toString());

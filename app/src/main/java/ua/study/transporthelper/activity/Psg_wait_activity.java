@@ -24,6 +24,8 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
 
         find_car_btn = findViewById(R.id.find_car_btn);
         find_car_btn.setOnClickListener(this);
+
+        //TODO Отправка на сервер данных с User_info
     }
 
     @Override

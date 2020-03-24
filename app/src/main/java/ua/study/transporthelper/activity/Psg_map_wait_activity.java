@@ -39,9 +39,6 @@ public class Psg_map_wait_activity extends FragmentActivity implements OnMapRead
         mapFragment.getMapAsync(this);
 
 
-
-
-
         confirm_btn = findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(this);
 
@@ -82,9 +79,8 @@ public class Psg_map_wait_activity extends FragmentActivity implements OnMapRead
         {
             case R.id.confirm_btn:
                 User_info.getInstance().setUser_location(user_location);
-
-
-                //TODO Написать реализацию... отправка на сервер
+                intent = new Intent(this, Psg_wait_activity.class);
+                startActivity(intent);
                 break;
         }
     }
