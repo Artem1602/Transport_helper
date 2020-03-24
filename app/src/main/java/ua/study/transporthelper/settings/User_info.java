@@ -7,6 +7,7 @@ public class User_info {
     private static final User_info user_info = new User_info();
     private String user_name;
     private String user_number;
+
     private LatLng user_location;
 
     public String getUser_name() {

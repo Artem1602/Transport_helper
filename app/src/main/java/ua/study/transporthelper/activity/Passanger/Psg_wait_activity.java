@@ -1,6 +1,7 @@
 package ua.study.transporthelper.activity.Passanger;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,6 +36,8 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
             entered_name_str.setText(User_info.getInstance().getUser_name());
             entered_number_str.setText(User_info.getInstance().getUser_number());
         }
+
+        Log.d("SSSPPP",User_info.getInstance().getUser_location().toString());
 
         //TODO Отправка на сервер данных с User_info
     }

@@ -3,7 +3,6 @@ package ua.study.transporthelper.activity.Passanger;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +16,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.study.transporthelper.R;
-import ua.study.transporthelper.settings.Test_settings;
 import ua.study.transporthelper.settings.User_info;
 
 public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMapClickListener {
