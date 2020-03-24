@@ -50,6 +50,7 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
             case R.id.set_place_btn:
                 //Запись полей
 
+
                 if(NumberCheck(name_str.getText().toString()))
                 {
                     Toast.makeText(this,"Invalid phone number",Toast.LENGTH_SHORT);
