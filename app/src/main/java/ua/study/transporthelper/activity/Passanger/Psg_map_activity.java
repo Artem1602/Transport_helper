@@ -51,7 +51,8 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.setMyLocationEnabled(true);
         mMap.setOnMapLongClickListener(this);
 
-//        Location user_location = new Location(mMap.getMyLocation());
+
+
 
         UiSettings settings = mMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true);
@@ -60,8 +61,13 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         // Add a marker in Sydney and move the camera
 
         LatLng cher = new LatLng(Test_settings.LATITUDE, Test_settings.LONGITUDE);
-        set_marker(cher);
+        mMap.addMarker(new MarkerOptions().position(cher));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(cher.latitude,cher.longitude)));
 
+
+
+//        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 
 
@@ -93,7 +99,9 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
     {
         mMap.clear();
 
+        CameraUpdateFactory.zoomTo(10f); // 2 - 21
         mMap.addMarker(new MarkerOptions().position(marker_position));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 }

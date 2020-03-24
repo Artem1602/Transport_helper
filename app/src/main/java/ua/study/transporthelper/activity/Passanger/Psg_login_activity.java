@@ -34,14 +34,23 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
     }
 
     public boolean NumberCheck(String number){
+        int e=0;
         if(number.length()==13){
-            if(number.toCharArray()[0]=='+'||number.toCharArray()[1]=='3'||number.toCharArray()[2]=='8'||number.toCharArray()[3]=='0'){
-                for (int i = 1;number.length()<13;i++){
-                    if(!(number.toCharArray()[i]=='0')&&!(number.toCharArray()[i]=='1')&&!(number.toCharArray()[i]=='2')&&!(number.toCharArray()[i]=='3')&&!(number.toCharArray()[i]=='4')&&!(number.toCharArray()[i]=='5')
-                            &&!(number.toCharArray()[i]=='6')&&!(number.toCharArray()[i]=='7')&&!(number.toCharArray()[i]=='8')&&!(number.toCharArray()[i]=='9')){
-                        break;
+            if(number.toCharArray()[0]=='+'&& number.toCharArray()[1]=='3'&&number.toCharArray()[2]=='8'&&number.toCharArray()[3]=='0'){
+                if(number.toCharArray()[0]=='+'||number.toCharArray()[1]=='3'||number.toCharArray()[2]=='8'||number.toCharArray()[3]=='0'){
+                    for (int i = 1;i<number.length();i++ ){
+                        if (number.toCharArray()[i]=='1'||number.toCharArray()[i]=='0'||number.toCharArray()[i]=='2'||number.toCharArray()[i]=='3'
+                                ||number.toCharArray()[i]=='4'||number.toCharArray()[i]=='5'||number.toCharArray()[i]=='6'||number.toCharArray()[i]=='7'||number.toCharArray()[i]=='8'||number.toCharArray()[i]=='9'){
+                            e++;
+                        }
+                        if (e==12){
+                            return true;
+                        }
                     }
                 }
+            }else{
+
+                return false;
             }
         }
         return false;

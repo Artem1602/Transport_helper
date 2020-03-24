@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.study.transporthelper.R;
+import ua.study.transporthelper.settings.Test_settings;
 
 public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -37,16 +38,17 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);
 
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng cher = new LatLng(Test_settings.LATITUDE, Test_settings.LONGITUDE);
+        mMap.addMarker(new MarkerOptions().position(cher));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(cher.latitude,cher.longitude)));
     }
 
-    private  void set_marker(LatLng marker_position)
-    {
-        mMap.clear();
-
-        mMap.addMarker(new MarkerOptions().position(marker_position));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
-    }
+//    private  void set_marker(LatLng marker_position)
+//    {
+//        mMap.clear();
+//
+//        mMap.addMarker(new MarkerOptions().position(marker_position));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
+//    }
 }
