@@ -33,6 +33,15 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
 
     }
 
+    public boolean NumberCheck(String number){
+        if(number.length()==13){
+            if(number.toCharArray()[0]=='+'||number.toCharArray()[1]=='3'||number.toCharArray()[2]=='8'||number.toCharArray()[3]=='0'){
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public void onClick(View v) {
         Intent intent;
@@ -40,8 +49,14 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         {
             case R.id.set_place_btn:
                 //Запись полей
-                //TODO Проверка правильности ввода полей
-                if(!name_str.getText().toString().isEmpty() || !name_str.getText().toString().isEmpty())
+
+                if(NumberCheck(name_str.getText().toString()))
+                {
+                    Toast.makeText(this,"Invalid phone number",Toast.LENGTH_SHORT);
+                    break;
+                }
+
+                if(!name_str.getText().toString().isEmpty() && !name_str.getText().toString().isEmpty())
                 {
                     Toast.makeText(this,"@strings/fill_all_fields",Toast.LENGTH_SHORT);
                     break;

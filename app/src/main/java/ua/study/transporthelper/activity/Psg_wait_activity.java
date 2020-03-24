@@ -22,8 +22,6 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         entered_name_str = findViewById(R.id.entered_name_str);
         entered_number_str = findViewById(R.id.entered_number_str);
 
-
-
         find_car_btn = findViewById(R.id.find_car_btn);
         find_car_btn.setOnClickListener(this);
     }
