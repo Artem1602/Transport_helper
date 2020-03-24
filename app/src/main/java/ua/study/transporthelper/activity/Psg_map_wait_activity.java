@@ -83,6 +83,7 @@ public class Psg_map_wait_activity extends FragmentActivity implements OnMapRead
             case R.id.confirm_btn:
                 User_info.getInstance().setUser_location(user_location);
 
+
                 //TODO Написать реализацию... отправка на сервер
                 break;
         }
