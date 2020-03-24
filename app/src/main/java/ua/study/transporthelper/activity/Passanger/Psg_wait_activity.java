@@ -37,7 +37,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
             entered_number_str.setText(User_info.getInstance().getUser_number());
         }
 
-        Log.d("SSSPPP",User_info.getInstance().getUser_location().toString());
+
 
         //TODO Отправка на сервер данных с User_info
     }
