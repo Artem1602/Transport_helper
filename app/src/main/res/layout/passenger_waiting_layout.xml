@@ -45,6 +45,7 @@
         android:paddingLeft="15dp"
         android:paddingTop="130dp"
         android:paddingRight="15dp"
+        android:orientation="vertical"
         tools:ignore="MissingConstraints">
         <TextView
             android:id="@+id/entered_number_str"
@@ -56,17 +57,17 @@
             android:maxLength="13"
             android:inputType="none"
             />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingTop="180dp"
-        android:paddingRight="15dp"
-        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/entered_adress_str"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Ваша адреса"
+            android:textSize="30sp"
+            android:paddingTop="10dp"
+            android:textAlignment="center"
+            android:maxLength="13"
+            android:inputType="none"
+            />
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -94,4 +95,7 @@
             android:textColor="@color/MyBlue"
             />
     </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
