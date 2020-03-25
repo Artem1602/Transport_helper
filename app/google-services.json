@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "240850703404",
+    "firebase_url": "https://transport-helper-b8f09.firebaseio.com",
+    "project_id": "transport-helper-b8f09",
+    "storage_bucket": "transport-helper-b8f09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240850703404:android:a5227dbd299d6df4442d89",
+        "android_client_info": {
+          "package_name": "ua.study.transporthelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240850703404-tdq17fc6lt2v54nmk2o8cqnjn5fff3q8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUqjSrm3jIsqGFbBTzKYF9k_Q199xBjf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240850703404-tdq17fc6lt2v54nmk2o8cqnjn5fff3q8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
