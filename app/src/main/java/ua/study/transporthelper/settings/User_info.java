@@ -7,8 +7,10 @@ public class User_info {
     private static final User_info user_info = new User_info();
     private String user_name;
     private String user_number;
-
+    private String user_address;
     private LatLng user_location;
+
+    private User_info(){}
 
     public String getUser_name() {
         return user_name;
@@ -22,7 +24,9 @@ public class User_info {
         return user_location;
     }
 
-    private User_info(){}
+    public String getUser_address() {
+        return user_address;
+    }
 
     public static User_info getInstance(){
         return user_info;
@@ -40,14 +44,10 @@ public class User_info {
         this.user_location = user_location;
     }
 
-    public boolean NumberCheck(String number){
-        if(number.length()==13){
-            if(number.toCharArray()[0]=='+'||number.toCharArray()[1]=='3'||number.toCharArray()[2]=='8'||number.toCharArray()[3]=='0'){
-                return true;
-            }
-        }
-        return false;
+    public void setUser_address(String user_address) {
+        this.user_address = user_address;
     }
+
 
     public void write_on_server()
     {

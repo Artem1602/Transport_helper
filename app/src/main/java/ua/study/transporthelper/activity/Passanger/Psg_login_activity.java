@@ -17,6 +17,7 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
 
     private EditText name_str;
     private EditText number_str;
+    private EditText address_str;
     private Button set_place_btn;
 
 
@@ -27,6 +28,7 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
 
         name_str = findViewById(R.id.name_str);
         number_str = findViewById(R.id.number_str);
+        address_str = findViewById(R.id.address_str);
 
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
@@ -77,6 +79,7 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
 
                 User_info.getInstance().setUser_name(name_str.getText().toString());
                 User_info.getInstance().setUser_number(number_str.getText().toString());
+                User_info.getInstance().setUser_address(address_str.getText().toString());
 
                 intent = new Intent(this, Psg_map_activity.class);
                 startActivity(intent);
