@@ -15,4 +15,5 @@
     <string name="number_example">+380*********</string>
     <string name="title_activity_drv_map_activity">Map</string>
     <string name="title_activity_driver_map_activity">Map</string>
+    <string name="адреса">Місце призначення</string>
 </resources>
