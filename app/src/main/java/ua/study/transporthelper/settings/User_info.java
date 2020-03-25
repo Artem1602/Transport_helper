@@ -20,10 +20,6 @@ public class User_info {
         return user_number;
     }
 
-    public LatLng getUser_location() {
-        return user_location;
-    }
-
     public String getUser_address() {
         return user_address;
     }
@@ -48,10 +44,11 @@ public class User_info {
         this.user_address = user_address;
     }
 
-
-    public void write_on_server()
-    {
-        //TODO Firebase or JSON
+    public String toStringParser() {
+        String result;
+        Double latitude = user_location.latitude;
+        Double longitude = user_location.longitude;
+        result = latitude.toString() + "/" + longitude.toString();
+        return result;
     }
-
 }

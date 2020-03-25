@@ -37,7 +37,6 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
                 .findFragmentById(R.id.psg_location_map);
         mapFragment.getMapAsync(this);
 
-
         confirm_btn = findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(this);
 
@@ -51,23 +50,12 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.setMyLocationEnabled(true);
         mMap.setOnMapLongClickListener(this);
 
-
-
-
         UiSettings settings = mMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);
 
-        // Add a marker in Sydney and move the camera
-
-        LatLng cher = new LatLng(Test_settings.LATITUDE, Test_settings.LONGITUDE);
-        mMap.addMarker(new MarkerOptions().position(cher));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(cher.latitude,cher.longitude)));
-
-
-
-//        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(51.490898, 31.298577)));
     }
 
 
@@ -77,6 +65,8 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         switch (v.getId())
         {
             case R.id.confirm_btn:
+                if(user_location == null)
+                    break;
                 User_info.getInstance().setUser_location(user_location);
                 intent = new Intent(this, Psg_wait_activity.class);
                 startActivity(intent);
