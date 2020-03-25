@@ -15,6 +15,7 @@ import ua.study.transporthelper.settings.User_info;
 public class Psg_wait_activity extends AppCompatActivity implements View.OnClickListener {
     private TextView entered_name_str;
     private TextView entered_number_str;
+    private TextView entered_addres_str;
     private Button find_car_btn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,8 +24,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
 
         entered_name_str = findViewById(R.id.entered_name_str);
         entered_number_str = findViewById(R.id.entered_number_str);
-
-
+        entered_addres_str = findViewById(R.id.entered_adress_str);
         find_car_btn = findViewById(R.id.find_car_btn);
         find_car_btn.setOnClickListener(this);
 
@@ -32,12 +32,12 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         {
             entered_name_str.setText("Error");
             entered_number_str.setText("Error");
+            entered_addres_str.setText("Error");
         }else {
             entered_name_str.setText(User_info.getInstance().getUser_name());
             entered_number_str.setText(User_info.getInstance().getUser_number());
+            entered_addres_str.setText(User_info.getInstance().getUser_address());
         }
-
-
 
         //TODO Отправка на сервер данных с User_info
     }

@@ -65,7 +65,7 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         {
             case R.id.set_place_btn:
                 //Запись полей
-                if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty())
+                if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty()||address_str.getText().toString().isEmpty())
                 {
                     Toast.makeText(this,"Заповніть всі поля",Toast.LENGTH_LONG).show();
                     break;

@@ -67,13 +67,11 @@
             android:layout_height="wrap_content"
             android:lines="1"
             android:layout_width="match_parent"
-            android:inputType="phone|number"
             android:maxLines="1"
             android:singleLine="true"
             android:hint="@string/address"
             android:textSize="27sp"
             android:textAlignment="center"
-            android:maxLength="13"
             />
 
     </LinearLayout>
