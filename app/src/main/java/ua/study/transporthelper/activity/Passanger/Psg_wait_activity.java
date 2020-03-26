@@ -3,13 +3,18 @@ package ua.study.transporthelper.activity.Passanger;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,25 +24,21 @@ import ua.study.transporthelper.settings.User_Firebase;
 import ua.study.transporthelper.settings.User_info;
 
 public class Psg_wait_activity extends AppCompatActivity implements View.OnClickListener {
+
     private TextView entered_name_str;
     private TextView entered_number_str;
     private TextView entered_addres_str;
     private Button find_car_btn;
-    //Shared Preferences
-    private static final String MY_SETTINGS = "settings";
-    private static final String REGISTER_KEY = "hasRegister";
-    private static final String PHONE_NUMBER_KEY = "phone_number";
-    private static final String NAME_KEY = "phone_number";
-    private static final String ADDRESS_KEY = "phone_number";
     private String user_number;
+
     //FIREBASE
     private FirebaseDatabase database;
     private DatabaseReference myRef;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.passenger_waiting_layout);
-
 
         entered_name_str = findViewById(R.id.entered_name_str);
         entered_number_str = findViewById(R.id.entered_number_str);
@@ -45,6 +46,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         find_car_btn = findViewById(R.id.find_car_btn);
         find_car_btn.setOnClickListener(this);
 
+        //Getting data from Shared_preferences
         Bundle arguments = getIntent().getExtras();
         boolean is_register = false;
         if(arguments != null)
@@ -60,27 +62,31 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         }else {
             entered_name_str.setText(User_info.getInstance().getUser_name());
             entered_number_str.setText(User_info.getInstance().getUser_number());
-            String string = User_info.getInstance().getUser_address();
             entered_addres_str.setText(User_info.getInstance().getUser_address());
+            user_number = User_info.getInstance().getUser_number();
         }
         if(!is_register)
         {
             save_into_firebase();
-            put_number_into_sharedPF();
         }
     }
     private void save_into_firebase()
     {
-        //TODO Отправка на сервер данных с User_info
         User_Firebase user_firebase = new User_Firebase(User_info.getInstance().getUser_name(),
                 User_info.getInstance().getUser_number(),User_info.getInstance().getUser_address(),
                 User_info.getInstance().toStringParser());
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
-        myRef.child(user_firebase.getUser_number()).setValue(user_firebase);
+        myRef.child(user_firebase.getUser_number()).setValue(user_firebase).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                //If successful push data
+                put_user_data_into_sharedPF();
+            }
+        });
     }
 
-    private void put_number_into_sharedPF()
+    private void put_user_data_into_sharedPF()
     {
         SharedPreferences sharedPreferences = getSharedPreferences(Shared_preferences.MY_SETTINGS, Context.MODE_PRIVATE);
         SharedPreferences.Editor e = sharedPreferences.edit();
@@ -92,6 +98,28 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        //TODO Реализация для кнопки "Вже поїхав"
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference().child(user_number);
+        myRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(Psg_wait_activity.this,"Ваші данні видалені із мапи",Toast.LENGTH_LONG).show();
+                SharedPreferences sharedPreferences = getSharedPreferences(Shared_preferences.MY_SETTINGS, Context.MODE_PRIVATE);
+                SharedPreferences.Editor e = sharedPreferences.edit();
+                e.putBoolean(Shared_preferences.REGISTER_KEY,false);
+                e.commit();
+
+                //Start Delay then shut down application
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finishAffinity();
+                        System.exit(0);
+                    }
+                },4000);
+
+            }
+        });
     }
 }
