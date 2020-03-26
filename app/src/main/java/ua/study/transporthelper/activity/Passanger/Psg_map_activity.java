@@ -31,12 +31,9 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.passanger_map_layout);
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.psg_location_map);
         mapFragment.getMapAsync(this);
-
         confirm_btn = findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(this);
 
@@ -88,7 +85,6 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
     private  void set_marker(LatLng marker_position)
     {
         mMap.clear();
-
         CameraUpdateFactory.zoomTo(10f); // 2 - 21
         mMap.addMarker(new MarkerOptions().position(marker_position));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));

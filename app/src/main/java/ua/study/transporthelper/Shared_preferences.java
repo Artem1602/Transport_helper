@@ -39,10 +39,6 @@ public class Shared_preferences extends Activity {
         }else {
             intent = new Intent(this, Psg_wait_activity.class);
             intent.putExtra(REGISTER_KEY,true);
-            String s;
-            s = sp.getString(NAME_KEY,"ERROR");
-            s = sp.getString(PHONE_NUMBER_KEY,"ERROR");
-            s = sp.getString(ADDRESS_KEY,"ERROR");
             intent.putExtra(NAME_KEY,sp.getString(NAME_KEY,"ERROR"));
             intent.putExtra(PHONE_NUMBER_KEY,sp.getString(PHONE_NUMBER_KEY,"ERROR"));
             intent.putExtra(ADDRESS_KEY,sp.getString(ADDRESS_KEY,"ERROR"));
