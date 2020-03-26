@@ -19,18 +19,21 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
     private EditText number_str;
     private EditText address_str;
     private Button set_place_btn;
-
+    private Button info_btn;
+private boolean info = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.passenger_login);
 
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.passenger_login);
         name_str = findViewById(R.id.name_str);
         number_str = findViewById(R.id.number_str);
         address_str = findViewById(R.id.address_str);
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
+
 
     }
 
@@ -57,11 +60,15 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         return false;
     }
 
+
+
     @Override
     public void onClick(View v) {
         Intent intent;
         switch (v.getId())
         {
+            case R.id.number_str:
+                number_str.setText("+380");
             case R.id.set_place_btn:
                 //Запись полей
                 if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty()||address_str.getText().toString().isEmpty())
