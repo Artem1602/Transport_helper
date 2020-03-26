@@ -3,105 +3,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/MyBlue">
+    android:background="#ECEEF2">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/amethysta"
+            android:paddingTop="121dp"
             android:text="Ваші дані:"
-
-            android:textSize="45sp"
-            android:paddingLeft="30dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:paddingTop="10dp"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="70dp">
-        <EditText
-            android:id="@+id/name_str"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:layout_width="match_parent"
-            android:hint="@string/user_name"
-            android:lines="1"
-            android:textSize="27sp"
             android:textAlignment="center"
-            android:maxLength="20"
-            />
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:textStyle="normal" />
     </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:paddingTop="180dp"
+       android:orientation="vertical"
+       tools:ignore="MissingConstraints">
+
+       <EditText
+           android:id="@+id/name_str"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:background="@drawable/edit_field"
+           android:fontFamily="@font/open_sans"
+           android:hint="@string/user_name"
+           android:lines="1"
+           android:maxLength="20"
+           android:singleLine="true"
+           android:textAlignment="center"
+           android:textSize="27sp" />
+
+       <EditText
+           android:id="@+id/number_str"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="10dp"
+           android:background="@drawable/edit_field"
+           android:fontFamily="@font/open_sans"
+           android:hint="@string/number_example"
+
+           android:inputType="phone|number"
+           android:lines="1"
+           android:maxLength="13"
+           android:maxLines="1"
+           android:singleLine="true"
+           android:textAlignment="center"
+           android:textSize="27sp" />
+
+       <EditText
+           android:id="@+id/address_str"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="10dp"
+           android:background="@drawable/edit_field"
+           android:fontFamily="@font/open_sans"
+           android:hint="@string/address"
+           android:lines="1"
+           android:maxLines="1"
+           android:paddingLeft="10dp"
+           android:paddingRight="10dp"
+           android:singleLine="true"
+           android:textAlignment="center"
+           android:textSize="27sp" />
+     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:paddingTop="120dp"
-        android:paddingRight="15dp"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints">
-        <EditText
-            android:id="@+id/number_str"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:layout_width="match_parent"
-            android:inputType="phone|number"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:hint="@string/number_example"
-            android:textSize="27sp"
-            android:textAlignment="center"
-            android:maxLength="13"
-            />
-
-        <EditText
-            android:id="@+id/address_str"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:layout_width="match_parent"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:hint="@string/address"
-            android:textSize="27sp"
-            android:textAlignment="center"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-    android:orientation="vertical"
         android:paddingLeft="15dp"
-        android:paddingTop="250dp"
+
+        android:paddingTop="440dp"
         android:paddingRight="15dp"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp"
-            android:text="@string/notification"
-            android:textSize="25sp">
-
-        </TextView>
         <Button
             android:id="@+id/set_place_btn"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="55dp"
             android:background="@drawable/button_set_psg"
-            android:text="@string/login_accept_btn"
-            android:textSize="25sp"
+            android:fontFamily="@font/open_sans"
+            android:text="Продовжити"
             android:textAlignment="center"
-            android:textColor="@color/MyBlue"
-            />
-
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
