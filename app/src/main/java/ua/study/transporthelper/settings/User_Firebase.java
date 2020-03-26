@@ -7,6 +7,7 @@ public class User_Firebase {
     private String user_address;
     private String user_location;
 
+
     public User_Firebase(String user_name, String user_number, String user_address, String user_location) {
         this.user_name = user_name;
         this.user_number = user_number;

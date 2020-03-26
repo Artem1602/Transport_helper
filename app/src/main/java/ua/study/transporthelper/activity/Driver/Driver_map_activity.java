@@ -51,11 +51,4 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         return false;
     }
 
-//    private  void set_marker(LatLng marker_position)
-//    {
-//        mMap.clear();
-//
-//        mMap.addMarker(new MarkerOptions().position(marker_position));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
-//    }
 }

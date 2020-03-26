@@ -38,6 +38,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.passenger_waiting_layout);
 
+
         entered_name_str = findViewById(R.id.entered_name_str);
         entered_number_str = findViewById(R.id.entered_number_str);
         entered_addres_str = findViewById(R.id.entered_adress_str);

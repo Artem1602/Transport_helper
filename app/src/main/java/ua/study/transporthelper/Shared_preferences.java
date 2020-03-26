@@ -25,7 +25,6 @@ public class Shared_preferences extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS, Context.MODE_PRIVATE);
         has_register = sp.getBoolean(REGISTER_KEY, false);
         Intent intent;

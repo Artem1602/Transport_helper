@@ -29,7 +29,6 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         name_str = findViewById(R.id.name_str);
         number_str = findViewById(R.id.number_str);
         address_str = findViewById(R.id.address_str);
-
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
 

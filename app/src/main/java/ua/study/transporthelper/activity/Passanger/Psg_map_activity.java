@@ -47,6 +47,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.setMyLocationEnabled(true);
         mMap.setOnMapLongClickListener(this);
 
+
         UiSettings settings = mMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);

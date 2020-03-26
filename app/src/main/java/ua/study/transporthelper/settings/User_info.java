@@ -49,6 +49,7 @@ public class User_info {
         Double latitude = user_location.latitude;
         Double longitude = user_location.longitude;
         result = latitude.toString() + "/" + longitude.toString();
+
         return result;
     }
 }
