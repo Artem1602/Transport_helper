@@ -60,17 +60,7 @@
             android:textAlignment="center"
             android:inputType="none"
             />
-        <Button
-            android:layout_marginTop="10dp"
-            android:id="@+id/find_car_btn"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@drawable/button_set_psg"
-            android:text="Підтвредити виклик"
-            android:textSize="22sp"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            />
+
 
         <TextView
             android:layout_marginTop="15dp"
@@ -89,7 +79,18 @@
             android:paddingBottom="15dp"
             android:text="@string/finder"
             android:textSize="21sp" />
-
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/find_car_btn"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/button_set_psg"
+            android:text="Підтвредити виклик"
+            android:textSize="22sp"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            />
     </LinearLayout>
 
 
