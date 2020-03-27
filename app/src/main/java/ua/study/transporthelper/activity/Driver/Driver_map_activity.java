@@ -80,9 +80,14 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
 
     private  void set_marker(String name,String number ,String address, LatLng marker_position)
     {
-        mMap.clear();
         mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + " " + address));
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
     @Override
     public boolean onMarkerClick(Marker marker) {
 

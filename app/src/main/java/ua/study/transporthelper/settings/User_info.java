@@ -24,6 +24,10 @@ public class User_info {
         return user_address;
     }
 
+    public LatLng getUser_location() {
+        return user_location;
+    }
+
     public static User_info getInstance(){
         return user_info;
     }

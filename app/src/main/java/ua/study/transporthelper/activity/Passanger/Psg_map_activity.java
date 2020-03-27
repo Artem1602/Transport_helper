@@ -3,7 +3,9 @@ package ua.study.transporthelper.activity.Passanger;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.study.transporthelper.R;
+import ua.study.transporthelper.Shared_preferences;
 import ua.study.transporthelper.settings.Test_settings;
 import ua.study.transporthelper.settings.User_info;
 
@@ -98,4 +101,12 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getAltitude())));
     }
+
+//    @Override
+//    protected void onDestroy() {
+//        SharedPreferences sp = getSharedPreferences(Shared_preferences.MY_SETTINGS, Context.MODE_PRIVATE);
+//
+//
+//        super.onDestroy();
+//    }
 }

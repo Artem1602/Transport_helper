@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.activity.Passanger.Psg_wait_activity;
+import ua.study.transporthelper.settings.User_info;
 
 public class Shared_preferences extends Activity {
     public static final String MY_SETTINGS = "settings";
@@ -32,9 +33,12 @@ public class Shared_preferences extends Activity {
         {
             intent = new Intent(this, Login_activity.class);
             startActivity(intent);
-            SharedPreferences.Editor e = sp.edit();
-            e.putBoolean(REGISTER_KEY, true);
-            e.commit();
+            if(User_info.getInstance().getUser_location() != null)
+            {
+                SharedPreferences.Editor e = sp.edit();
+                e.putBoolean(REGISTER_KEY, true);
+                e.commit();
+            }
         }else {
             intent = new Intent(this, Psg_wait_activity.class);
             intent.putExtra(REGISTER_KEY,true);

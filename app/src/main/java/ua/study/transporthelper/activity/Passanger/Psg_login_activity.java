@@ -73,8 +73,6 @@ private boolean info = true;
         Intent intent;
         switch (v.getId())
         {
-            case R.id.number_str:
-                number_str.setText("+380");
             case R.id.set_place_btn:
                 //Запись полей
                 if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty()||address_str.getText().toString().isEmpty())
