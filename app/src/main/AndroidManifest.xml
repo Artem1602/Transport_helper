@@ -25,22 +25,28 @@
 
         <activity
             android:name=".activity.Driver.Driver_map_activity"
-            android:label="@string/title_activity_driver_map_activity">
+            android:label="@string/title_activity_driver_map_activity"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activity.Passanger.Psg_map_activity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".Shared_preferences">
+        <activity android:name=".Shared_preferences"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Login_activity"/>
-        <activity android:name=".activity.Passanger.Psg_login_activity" />
-        <activity android:name=".activity.Passanger.Psg_wait_activity" />
+        <activity android:name=".activity.Login_activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.Passanger.Psg_login_activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.Passanger.Psg_wait_activity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

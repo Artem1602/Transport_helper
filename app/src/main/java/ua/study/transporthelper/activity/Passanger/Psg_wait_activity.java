@@ -96,6 +96,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         e.putString(Shared_preferences.PHONE_NUMBER_KEY,User_info.getInstance().getUser_number());
         e.putString(Shared_preferences.NAME_KEY,User_info.getInstance().getUser_name());
         e.putString(Shared_preferences.ADDRESS_KEY,User_info.getInstance().getUser_address());
+        e.putBoolean(Shared_preferences.REGISTER_KEY,true);
         e.commit();
     }
 

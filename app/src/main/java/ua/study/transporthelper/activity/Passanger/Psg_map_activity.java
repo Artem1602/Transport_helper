@@ -94,7 +94,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(marker_position));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15)); // 2 - 21
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(15)); // 2 - 21
     }
 
     @Override
