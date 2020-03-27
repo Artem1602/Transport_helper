@@ -42,13 +42,16 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
         }
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(Login_activity.this,new String[]{Manifest.permission.INTERNET},2 );
+            ActivityCompat.requestPermissions(Login_activity.this,new String[]{Manifest.permission.INTERNET},1 );
         }
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(Login_activity.this,new String[]{Manifest.permission.ACCESS_NETWORK_STATE},3 );
+            ActivityCompat.requestPermissions(Login_activity.this,new String[]{Manifest.permission.ACCESS_NETWORK_STATE},1 );
         }
-
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(Login_activity.this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},1 );
+        }
     }
 
 

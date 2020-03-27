@@ -34,20 +34,20 @@
         android:orientation="horizontal">
         <Button
             android:id="@+id/driver_btn"
-            android:layout_width="176dp"
-            android:layout_height="176dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="20dp"
             android:layout_alignParentLeft="true"
             android:layout_weight="1"
-            android:background="@drawable/driver" />
+            android:background="@mipmap/driver" />
         <Button
             android:id="@+id/passenger_btn"
-            android:layout_width="176dp"
+            android:layout_width="150dp"
             android:layout_marginRight="20dp"
-            android:layout_height="176dp"
+            android:layout_height="150dp"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
-            android:background="@drawable/passenger" />
+            android:background="@mipmap/ic_launcher_foreground" />
     </RelativeLayout>
 </LinearLayout>
 
