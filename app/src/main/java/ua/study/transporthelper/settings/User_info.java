@@ -44,12 +44,18 @@ public class User_info {
         this.user_address = user_address;
     }
 
+    Double roundNumbers(Double number){
+            number=number*10000;
+            number=Math.ceil(number);
+            number=number/10000;
+        return number;
+    }
+
     public String toStringParser() {
         String result;
         Double latitude = user_location.latitude;
         Double longitude = user_location.longitude;
-        result = latitude.toString() + "/" + longitude.toString();
-
+        result = roundNumbers(latitude).toString() + "/" + roundNumbers(longitude).toString();
         return result;
     }
 }
