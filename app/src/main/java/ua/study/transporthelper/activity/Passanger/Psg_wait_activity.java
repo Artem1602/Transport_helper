@@ -1,6 +1,7 @@
 package ua.study.transporthelper.activity.Passanger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.Shared_preferences;
+import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.User_Firebase;
 import ua.study.transporthelper.settings.User_info;
 
@@ -77,6 +79,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
                 User_info.getInstance().toStringParser());
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
+
         myRef.child(user_firebase.getUser_number()).setValue(user_firebase).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -109,16 +112,17 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
                 e.putBoolean(Shared_preferences.REGISTER_KEY,false);
                 e.commit();
 
-                //Start Delay then shut down application
+//                Start Delay then shut down application
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        finishAffinity();
-                        System.exit(0);
+                        Intent intent = new Intent(Psg_wait_activity.this,Login_activity.class);;
+                        startActivity(intent);
+//                        finishAffinity();
+//                        System.exit(0);
                     }
                 },4000);
-
             }
         });
     }
