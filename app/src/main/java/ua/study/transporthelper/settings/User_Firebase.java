@@ -1,6 +1,8 @@
 package ua.study.transporthelper.settings;
 
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class User_Firebase {
     private String user_name;
     private String user_number;
@@ -46,6 +48,13 @@ public class User_Firebase {
     public void setUser_location(String user_location) {
         this.user_location = user_location;
     }
+
+    static LatLng toLatLngParser(String string){
+        String[] loc = string.split("/");
+        LatLng location  = new LatLng(Double.parseDouble(loc[0]),Double.parseDouble(loc[1]));
+        return location;
+    }
+
 }
 
 

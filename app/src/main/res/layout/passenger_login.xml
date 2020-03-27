@@ -50,7 +50,7 @@
            android:layout_height="45dp"
            android:layout_marginLeft="20dp"
            android:layout_marginTop="20dp"
-           сгк
+           
            android:layout_marginRight="20dp"
            android:background="@drawable/edit_field"
            android:fontFamily="@font/open_sans"
