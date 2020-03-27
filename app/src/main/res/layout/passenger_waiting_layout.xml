@@ -3,30 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/MyBlue">
+    android:background="#ECEEF2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/your_info"
-            android:textSize="45sp"
-            android:paddingLeft="30dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:paddingTop="10dp"
-            />
+            android:fontFamily="@font/amethysta"
+            android:paddingTop="121dp"
+            android:text="Ваші дані:"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:textStyle="normal" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
         android:paddingLeft="15dp"
+        android:paddingTop="180dp"
         android:paddingRight="15dp"
-        android:paddingTop="80dp">
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
         <TextView
             android:id="@+id/entered_name_str"
             android:layout_height="wrap_content"
@@ -37,16 +39,6 @@
             android:maxLength="20"
             android:inputType="none"
             />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:paddingTop="130dp"
-        android:paddingRight="15dp"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
         <TextView
             android:id="@+id/entered_number_str"
             android:layout_height="wrap_content"
@@ -55,6 +47,7 @@
             android:textSize="30sp"
             android:textAlignment="center"
             android:maxLength="13"
+            android:paddingTop="10dp"
             android:inputType="none"
             />
         <TextView
@@ -65,13 +58,25 @@
             android:textSize="30sp"
             android:paddingTop="10dp"
             android:textAlignment="center"
-            android:maxLength="13"
             android:inputType="none"
             />
-        <TextView
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/find_car_btn"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textSize="25sp"
+            android:background="@drawable/button_set_psg"
+            android:text="Підтвредити виклик"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="21sp"
             android:paddingLeft="15dp"
             android:text="@string/waiter"
             android:paddingBottom="10dp"
@@ -83,17 +88,8 @@
             android:paddingLeft="15dp"
             android:paddingBottom="15dp"
             android:text="@string/finder"
-            android:textSize="25sp" />
-        <Button
-            android:id="@+id/find_car_btn"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@drawable/button_set_psg"
-            android:text="Підтвредити виклик"
-            android:textSize="22sp"
-            android:textAlignment="center"
-            android:textColor="@color/MyBlue"
-            />
+            android:textSize="21sp" />
+
     </LinearLayout>
 
 

@@ -22,6 +22,7 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
     private Button info_btn;
 private boolean info = true;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -33,7 +34,12 @@ private boolean info = true;
         address_str = findViewById(R.id.address_str);
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
-
+        number_str.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus) number_str.setText("+380");
+            }
+        });
 
     }
 

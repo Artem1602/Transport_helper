@@ -3,15 +3,15 @@
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="15dip"/>
-            <stroke android:width="4dip" android:color="@android:color/black"/>
-            <solid android:color="#359c5e"/>
+            <stroke android:width="0dip" android:color="#FFFF"/>
+            <solid android:color="#FFFF"/>
         </shape>
     </item>
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="15dip"/>
-            <stroke android:width="4dip" android:color="@android:color/black"/>
-            <solid android:color="#359c5e"/>
+            <stroke android:width="0dip" android:color="#FFFF"/>
+            <solid android:color="#FFFF"/>
         </shape>
     </item>
     <item>

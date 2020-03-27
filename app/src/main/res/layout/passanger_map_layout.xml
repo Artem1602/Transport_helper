@@ -16,20 +16,22 @@
 
     <Button
         android:id="@+id/confirm_btn"
-        android:layout_width="wrap_content"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="236dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+android:textSize="20sp"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="145dp"
+        android:layout_marginStart="92dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="145dp"
+        android:layout_marginEnd="83dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/button_accept_psg"
+        android:background="@drawable/button_set_psg"
         android:padding="8dp"
         android:text="@string/confirm"
-        tools:context=".activity.Passanger.Psg_map_activity"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:textColor="#ffffff" />
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        tools:context=".activity.Passanger.Psg_map_activity" />
 
 </RelativeLayout>
