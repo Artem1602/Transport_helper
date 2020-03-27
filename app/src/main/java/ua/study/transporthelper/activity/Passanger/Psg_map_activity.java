@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -101,12 +102,4 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getAltitude())));
     }
-
-//    @Override
-//    protected void onDestroy() {
-//        SharedPreferences sp = getSharedPreferences(Shared_preferences.MY_SETTINGS, Context.MODE_PRIVATE);
-//
-//
-//        super.onDestroy();
-//    }
 }

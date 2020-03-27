@@ -111,19 +111,17 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
                 SharedPreferences.Editor e = sharedPreferences.edit();
                 e.putBoolean(Shared_preferences.REGISTER_KEY,false);
                 e.commit();
-
-//                Start Delay then shut down application
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         Intent intent = new Intent(Psg_wait_activity.this,Login_activity.class);;
                         startActivity(intent);
-//                        finishAffinity();
-//                        System.exit(0);
                     }
-                },4000);
+                },3000);
             }
         });
     }
+    @Override
+    public void onBackPressed() {}
 }
