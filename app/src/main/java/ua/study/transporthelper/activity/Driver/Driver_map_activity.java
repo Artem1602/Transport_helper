@@ -11,6 +11,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -80,7 +82,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
 
     private  void set_marker(String name,String number ,String address, LatLng marker_position)
     {
-        mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + " " + address));
+        mMap.addMarker(new MarkerOptions().position(marker_position).icon(BitmapDescriptorFactory.fromResource(R.mipmap.pick_up_foreground)).title(name).snippet(number + " " + address));
     }
 
     @Override
