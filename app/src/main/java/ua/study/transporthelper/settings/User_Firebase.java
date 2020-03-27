@@ -9,7 +9,7 @@ public class User_Firebase {
     private String user_address;
     private String user_location;
 
-
+    public User_Firebase() {}
     public User_Firebase(String user_name, String user_number, String user_address, String user_location) {
         this.user_name = user_name;
         this.user_number = user_number;
@@ -49,7 +49,7 @@ public class User_Firebase {
         this.user_location = user_location;
     }
 
-    static LatLng toLatLngParser(String string){
+    public LatLng toLatLngParser(String string){
         String[] loc = string.split("/");
         LatLng location  = new LatLng(Double.parseDouble(loc[0]),Double.parseDouble(loc[1]));
         return location;

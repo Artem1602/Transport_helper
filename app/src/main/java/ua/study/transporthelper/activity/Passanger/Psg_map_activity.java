@@ -69,6 +69,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
                 if(user_location == null)
                 {
                     Toast.makeText(this,"Ви не поставили маркер",Toast.LENGTH_LONG).show();
+                    break;
                 }
                 User_info.getInstance().setUser_location(user_location);
                 intent = new Intent(this, Psg_wait_activity.class);
@@ -87,10 +88,9 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
     private  void set_marker(LatLng marker_position)
     {
         mMap.clear();
-        CameraUpdateFactory.zoomTo(10f); // 2 - 21
         mMap.addMarker(new MarkerOptions().position(marker_position));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15)); // 2 - 21
     }
 
     @Override

@@ -20,16 +20,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.settings.Test_settings;
+import ua.study.transporthelper.settings.User_Firebase;
 
 public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
     private FirebaseDatabase database;
     private DatabaseReference reference;
-    private long database_size;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +39,20 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-//        database = FirebaseDatabase.getInstance();
-//        reference = database.getReference();
-//        database_size = 0;
-//        reference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                set_size(dataSnapshot);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference();
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                get_user(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -64,18 +65,24 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);
 
-        LatLng cher = new LatLng(Test_settings.LATITUDE, Test_settings.LONGITUDE);
-        mMap.addMarker(new MarkerOptions().position(cher).title("Anna Stepanivna").snippet("+380636147454"));
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(cher.latitude,cher.longitude)));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(51.490898, 31.298577)));
     }
 
-    private void set_size(DataSnapshot dataSnapshot)
+    private void get_user(DataSnapshot snapshot)
     {
-        database_size = dataSnapshot.getChildrenCount();
-        Log.d("SSSPPP", Long.toString(database_size));
+        for(DataSnapshot ds : snapshot.getChildren())
+        {
+            User_Firebase user = ds.getValue(User_Firebase.class);
+            set_marker(user.getUser_name(), user.getUser_address(), user.getUser_number(), user.toLatLngParser(user.getUser_location()));
+        }
     }
 
+    private  void set_marker(String name,String number ,String address, LatLng marker_position)
+    {
+        mMap.clear();
+        mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + " " + address));
+    }
     @Override
     public boolean onMarkerClick(Marker marker) {
 
