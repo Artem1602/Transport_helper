@@ -82,7 +82,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
 
     private  void set_marker(String name,String number ,String address, LatLng marker_position)
     {
-        mMap.addMarker(new MarkerOptions().position(marker_position).icon(BitmapDescriptorFactory.fromResource(R.mipmap.pick_up_foreground)).title(name).snippet(number + " " + address));
+        mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + " " + address));
     }
 
     @Override
