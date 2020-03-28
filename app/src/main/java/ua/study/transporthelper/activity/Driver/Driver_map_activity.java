@@ -2,6 +2,8 @@ package ua.study.transporthelper.activity.Driver;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -63,6 +65,27 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.setMyLocationEnabled(true);
 
+        mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+            @Override
+            public View getInfoWindow(Marker marker) {
+
+                return null;
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+                View v = getLayoutInflater().inflate(R.layout.info_show,null);
+                TextView name = v.findViewById(R.id.name_info);
+                TextView number = v.findViewById(R.id.number_info);
+                TextView info = v.findViewById(R.id.info_info);
+                name.setText(marker.getTitle());
+                number.setText(marker.getSnippet().split("/")[0]);
+                info.setText(marker.getSnippet().split("/")[1]);
+                return null;
+            }
+        });
+
+
         UiSettings settings = mMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);
@@ -82,7 +105,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
 
     private  void set_marker(String name,String number ,String address, LatLng marker_position)
     {
-        mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + " " + address));
+        mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + "/" + address));
     }
 
     @Override

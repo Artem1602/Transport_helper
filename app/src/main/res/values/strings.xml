@@ -17,4 +17,5 @@
     <string name="title_activity_driver_map_activity">Map</string>
     <string name="address">Місце призначення</string>
     <string name="your_info">Ваші данні</string>
+    <string name="eror">Eror</string>
 </resources>
