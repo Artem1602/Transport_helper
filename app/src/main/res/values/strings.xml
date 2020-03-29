@@ -8,7 +8,7 @@
     <string name="waiter">\tОчікуйте на дзвінок від волонтера та завчасно обговоріть місце зустрічі.</string>
     <string name="finder">\tЯкщо ви вже сконтактували з волонтером, натисніть на кнопку "Підтвердити виклик"</string>
     <string name="confirm">Підтвердити</string>
-    <string name="notification">\t Після того, як ви натиснете на кнопку "Продовжити", вас буде переміщено на карту. Розмістіть точку там, де вам буде зручно очікувати машину.</string>
+    <string name="notification">\t Після того, як ви натиснете на кнопку "Продовжити", вас буде переміщено на карту. Розмістіть точку там, де вам буде зручно очікувати машину волонтера.</string>
     <string name="fill_all_fields">Заповніть всі поля</string>
     <string name="your_name">Ваше ім\'я</string>
     <string name="number_example">+380*********</string>
@@ -29,4 +29,6 @@
     <string name="good">Добре</string>
     <string name="sure_to_delete">Ви впевнені, що бажаєте видалити свої дані?</string>
     <string name="your_data_from_map">Ваші данні видалені із мапи</string>
+    <string name="help">Допомога</string>
+    <string name="info">Інформація</string>
 </resources>
