@@ -43,7 +43,7 @@
             android:id="@+id/entered_number_str"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:hint="@string/user_number"
+
             android:textSize="30sp"
             android:textAlignment="center"
             android:maxLength="13"

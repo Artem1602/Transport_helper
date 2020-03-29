@@ -1,11 +1,15 @@
 package ua.study.transporthelper.activity.Driver;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -13,24 +17,21 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Objects;
-
 import ua.study.transporthelper.R;
-import ua.study.transporthelper.settings.Test_settings;
+import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.User_Firebase;
 
-public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationClickListener {
 
     private GoogleMap mMap;
     private FirebaseDatabase database;
@@ -45,7 +46,6 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         mapFragment.getMapAsync(this);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -64,6 +64,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.setMyLocationEnabled(true);
+        mMap.setOnMyLocationClickListener(this);
 
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
             @Override
@@ -81,7 +82,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
                 name.setText(marker.getTitle());
                 number.setText(marker.getSnippet().split("/")[0]);
                 info.setText(marker.getSnippet().split("/")[1]);
-                return null;
+                return v;
             }
         });
 
@@ -119,4 +120,12 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         return false;
     }
 
+    @Override
+    public void onMyLocationClick(@NonNull Location location) {
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//            fab.setTooltipText("Send an email");
+        }
+    }
 }

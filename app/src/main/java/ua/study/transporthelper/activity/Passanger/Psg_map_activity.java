@@ -1,14 +1,15 @@
 package ua.study.transporthelper.activity.Passanger;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import android.content.Context;
+import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,8 +23,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.study.transporthelper.R;
-import ua.study.transporthelper.Shared_preferences;
-import ua.study.transporthelper.settings.Test_settings;
 import ua.study.transporthelper.settings.User_info;
 
 public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMyLocationClickListener {
@@ -31,20 +30,17 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
     private GoogleMap mMap;
     private Button confirm_btn;
     private LatLng user_location;
-    private int i_for_fast_click;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.passanger_map_layout);
-        i_for_fast_click = 0;
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.psg_location_map);
         mapFragment.getMapAsync(this);
         confirm_btn = findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(this);
-
     }
 
 

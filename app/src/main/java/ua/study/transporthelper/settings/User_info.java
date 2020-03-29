@@ -9,6 +9,7 @@ public class User_info {
     private String user_number;
     private String user_address;
     private LatLng user_location;
+    private boolean permission;
 
     private User_info(){}
 
@@ -61,5 +62,13 @@ public class User_info {
         Double longitude = user_location.longitude;
         result = roundNumbers(latitude).toString() + "/" + roundNumbers(longitude).toString();
         return result;
+    }
+
+    public boolean isPermission() {
+        return permission;
+    }
+
+    public void setPermission(boolean permission) {
+        this.permission = permission;
     }
 }

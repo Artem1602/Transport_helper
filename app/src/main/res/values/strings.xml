@@ -6,8 +6,8 @@
     <string name="user_number">Ваш номер телефону</string>
     <string name="login_accept_btn">Розміститися</string>
     <string name="title_activity_maps">Map</string>
-    <string name="waiter"> \t    Очікуйте на дзвінок від водія та завчасно обговоріть місце зустрічі.</string>
-    <string name="finder">   \t  Якщо ви вже сконтактували з водієм, натисніть на кнопку "Підтвердити виклик"</string>
+    <string name="waiter">\tОчікуйте на дзвінок від водія та завчасно обговоріть місце зустрічі.</string>
+    <string name="finder">\tЯкщо ви вже сконтактували з водієм, натисніть на кнопку "Підтвердити виклик"</string>
     <string name="confirm">Підтвердити</string>
     <string name="notification">\t Після того, як ви натиснете на кнопку "Продовжити", вас буде переміщено на карту. Розмістіть точку там, де вам буде зручно очікувати машину.</string>
     <string name="fill_all_fields">Заповніть всі поля</string>
@@ -17,5 +17,6 @@
     <string name="title_activity_driver_map_activity">Map</string>
     <string name="address">Місце призначення</string>
     <string name="your_info">Ваші данні</string>
-    <string name="eror">Eror</string>
+    <string name="eror">Error</string>
+    <string name="click_on_marker">Натисніть на маркер</string>
 </resources>
