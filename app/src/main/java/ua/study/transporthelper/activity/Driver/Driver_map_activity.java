@@ -1,22 +1,17 @@
 package ua.study.transporthelper.activity.Driver;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -27,7 +22,6 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,10 +29,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import ua.study.transporthelper.R;
-import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.User_Firebase;
 
-public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener {
+public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
     private FirebaseDatabase database;
@@ -127,6 +120,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         return false;
     }
 
+
     @Override
     public boolean onMyLocationButtonClick() {
         LocationManager lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
@@ -146,5 +140,17 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
             alertDialog.show();
         }
         return false;
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+     String number ="tel:" + marker.getSnippet().split("/")[1];
+     Intent intenT = new Intent(Intent.ACTION_DIAL);
+        intenT.setData(Uri.parse(number));
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
