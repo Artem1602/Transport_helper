@@ -1,11 +1,18 @@
 package ua.study.transporthelper.activity.Driver;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -31,7 +38,7 @@ import ua.study.transporthelper.R;
 import ua.study.transporthelper.activity.Login_activity;
 import ua.study.transporthelper.settings.User_Firebase;
 
-public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationClickListener {
+public class Driver_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener {
 
     private GoogleMap mMap;
     private FirebaseDatabase database;
@@ -64,7 +71,7 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.setMyLocationEnabled(true);
-        mMap.setOnMyLocationClickListener(this);
+        mMap.setOnMyLocationButtonClickListener(this);
 
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
             @Override
@@ -121,11 +128,23 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
     }
 
     @Override
-    public void onMyLocationClick(@NonNull Location location) {
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-        {
-//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//            fab.setTooltipText("Send an email");
+    public boolean onMyLocationButtonClick() {
+        LocationManager lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+
+        boolean gps_enabled = false;
+        try {
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch(Exception ex) {}
+
+        if(!gps_enabled) {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("GPS не увімкнений, він необхідний для відображення вашої геолокації").setPositiveButton("Відкрити налаштування", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                }
+            }).setNegativeButton("Ігнорувати", null).create();
+            alertDialog.show();
         }
+        return false;
     }
 }

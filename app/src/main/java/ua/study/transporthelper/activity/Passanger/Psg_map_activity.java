@@ -6,10 +6,15 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,7 +30,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.settings.User_info;
 
-public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMyLocationClickListener {
+public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMyLocationButtonClickListener{
 
     private GoogleMap mMap;
     private Button confirm_btn;
@@ -50,6 +55,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.setMyLocationEnabled(true);
         mMap.setOnMapLongClickListener(this);
+        mMap.setOnMyLocationButtonClickListener(this);
 
         UiSettings settings = mMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true);
@@ -90,12 +96,26 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(marker_position));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(marker_position.latitude,marker_position.longitude)));
-        //mMap.animateCamera(CameraUpdateFactory.zoomTo(15)); // 2 - 21
     }
 
     @Override
-    public void onMyLocationClick(@NonNull Location location) {
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getAltitude())));
+    public boolean onMyLocationButtonClick() {
+        LocationManager lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+
+        boolean gps_enabled = false;
+        try {
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch(Exception ex) {}
+
+        if(!gps_enabled) {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("GPS не увімкнений, він необхідний для відображення вашої геолокації").setPositiveButton("Відкрити налаштування", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                }
+            }).setNegativeButton("Ігнорувати", null).create();
+            alertDialog.show();
+        }
+        return false;
     }
 }
