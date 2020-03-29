@@ -5,7 +5,6 @@
     <string name="user_name">Як до вас звертатись?</string>
     <string name="user_number">Ваш номер телефону</string>
     <string name="login_accept_btn">Розміститися</string>
-    <string name="title_activity_maps">Map</string>
     <string name="waiter">\tОчікуйте на дзвінок від водія та завчасно обговоріть місце зустрічі.</string>
     <string name="finder">\tЯкщо ви вже сконтактували з водієм, натисніть на кнопку "Підтвердити виклик"</string>
     <string name="confirm">Підтвердити</string>
@@ -13,10 +12,21 @@
     <string name="fill_all_fields">Заповніть всі поля</string>
     <string name="your_name">Ваше ім\'я</string>
     <string name="number_example">+380*********</string>
-    <string name="title_activity_drv_map_activity">Map</string>
-    <string name="title_activity_driver_map_activity">Map</string>
+    <string name="Map">Map</string>
     <string name="address">Місце призначення</string>
     <string name="your_info">Ваші данні</string>
-    <string name="eror">Error</string>
+    <string name="error">Error</string>
     <string name="click_on_marker">Натисніть на маркер</string>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="open_settings">Відкрити налаштування</string>
+    <string name="GPS_dont_turn_on">GPS не увімкнений, він необхідний для відображення вашої геолокації</string>
+    <string name="ignore">Ігнорувати</string>
+    <string name="wrong_phone_number">Неправильний номер телефону</string>
+    <string name="do_you_want_to_call">Ви бажаєте зателефонувати цій людині?</string>
+    <string name="you_dont_set_marker">Ви не поставили маркер</string>
+    <string name="put_marker">Щоб поставити маркер, утримуйте натисніть і утримуйте на вибраній вамі локації</string>
+    <string name="good">Добре</string>
+    <string name="sure_to_delete">Ви впевнені, що бажаєте видалити свої дані?</string>
+    <string name="your_data_from_map">Ваші данні видалені із мапи</string>
 </resources>

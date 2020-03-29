@@ -30,11 +30,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.settings.User_info;
 
-public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMyLocationButtonClickListener{
+public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMapClickListener{
 
     private GoogleMap mMap;
     private Button confirm_btn;
     private LatLng user_location;
+    private int click_i;
 
 
     @Override
@@ -46,6 +47,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mapFragment.getMapAsync(this);
         confirm_btn = findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(this);
+        click_i = 0;
     }
 
 
@@ -56,6 +58,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         mMap.setMyLocationEnabled(true);
         mMap.setOnMapLongClickListener(this);
         mMap.setOnMyLocationButtonClickListener(this);
+        mMap.setOnMapClickListener(this);
 
         UiSettings settings = mMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true);
@@ -74,7 +77,7 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
             case R.id.confirm_btn:
                 if(user_location == null)
                 {
-                    Toast.makeText(this,"Ви не поставили маркер",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,R.string.you_dont_set_marker,Toast.LENGTH_LONG).show();
                     break;
                 }
                 User_info.getInstance().setUser_location(user_location);
@@ -108,14 +111,24 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         } catch(Exception ex) {}
 
         if(!gps_enabled) {
-            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("GPS не увімкнений, він необхідний для відображення вашої геолокації").setPositiveButton("Відкрити налаштування", new DialogInterface.OnClickListener() {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage(R.string.GPS_dont_turn_on).setPositiveButton(R.string.open_settings,new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                 }
-            }).setNegativeButton("Ігнорувати", null).create();
+            }).setNegativeButton(R.string.ignore, null).create();
             alertDialog.show();
         }
         return false;
+    }
+    @Override
+    public void onMapClick(LatLng latLng) {
+        click_i++;
+        if(click_i%2==0){
+            AlertDialog alertDialog = new AlertDialog.Builder(this)
+                    .setMessage(R.string.put_marker)
+                    .setPositiveButton(R.string.good, null).create();
+            alertDialog.show();
+        }
     }
 }

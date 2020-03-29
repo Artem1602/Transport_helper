@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.Passanger;
+package ua.study.transporthelper.activity.People;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +11,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ua.study.transporthelper.R;
+import ua.study.transporthelper.activity.Passanger.Psg_map_activity;
 import ua.study.transporthelper.settings.User_info;
 
-public class Psg_login_activity extends AppCompatActivity implements View.OnClickListener {
-
+public class People_login extends AppCompatActivity implements View.OnClickListener  {
     private EditText name_str;
     private EditText number_str;
     private EditText address_str;
@@ -45,15 +45,15 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         int e=0;
         if(number.length()==13){
             if(number.toCharArray()[0]=='+' && number.toCharArray()[1]=='3' && number.toCharArray()[2]=='8' && number.toCharArray()[3]=='0'){
-                    for(int i = 1;i<number.length();i++ ){
-                        if (number.toCharArray()[i]=='1'||number.toCharArray()[i]=='0'||number.toCharArray()[i]=='2'||number.toCharArray()[i]=='3'
-                                ||number.toCharArray()[i]=='4'||number.toCharArray()[i]=='5'||number.toCharArray()[i]=='6'||number.toCharArray()[i]=='7'||number.toCharArray()[i]=='8'||number.toCharArray()[i]=='9'){
-                            e++;
-                        }
-                        if (e==12){
-                            return true;
-                        }
+                for(int i = 1;i<number.length();i++ ){
+                    if (number.toCharArray()[i]=='1'||number.toCharArray()[i]=='0'||number.toCharArray()[i]=='2'||number.toCharArray()[i]=='3'
+                            ||number.toCharArray()[i]=='4'||number.toCharArray()[i]=='5'||number.toCharArray()[i]=='6'||number.toCharArray()[i]=='7'||number.toCharArray()[i]=='8'||number.toCharArray()[i]=='9'){
+                        e++;
                     }
+                    if (e==12){
+                        return true;
+                    }
+                }
             }else{
                 return false;
             }

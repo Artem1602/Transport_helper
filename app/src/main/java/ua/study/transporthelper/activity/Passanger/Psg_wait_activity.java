@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -105,13 +104,15 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Ви впевнені, що бажаєте видалити свої дані?")
-                .setPositiveButton("Так", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                delete_user_from_FB();
-            }
-        }).setNegativeButton("Ні", null).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage(R.string.sure_to_delete)
+                .setNegativeButton(R.string.no,null)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        delete_user_from_FB();
+                    }
+                }).create();
+        alertDialog.show();
     }
 
     private void delete_user_from_FB()
@@ -121,7 +122,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         myRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(Psg_wait_activity.this,"Ваші данні видалені із мапи",Toast.LENGTH_LONG).show();
+                Toast.makeText(Psg_wait_activity.this,R.string.your_data_from_map,Toast.LENGTH_LONG).show();
                 SharedPreferences sharedPreferences = getSharedPreferences(Shared_preferences.MY_SETTINGS, Context.MODE_PRIVATE);
                 SharedPreferences.Editor e = sharedPreferences.edit();
                 e.putBoolean(Shared_preferences.REGISTER_KEY,false);
@@ -133,7 +134,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
                         Intent intent = new Intent(Psg_wait_activity.this,Login_activity.class);;
                         startActivity(intent);
                     }
-                },3000);
+                },2000);
             }
         });
     }
