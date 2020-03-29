@@ -31,4 +31,6 @@
     <string name="your_data_from_map">Ваші данні видалені із мапи</string>
     <string name="help">Допомога</string>
     <string name="info">Інформація</string>
+    <string name="needs">Потреба</string>
+    <string name="call">Зателефонувати?</string>
 </resources>

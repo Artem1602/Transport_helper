@@ -28,6 +28,7 @@
         android:textSize="17sp"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
+
     <TextView
         android:textAlignment="center"
         android:hint="@string/error"

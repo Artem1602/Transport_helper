@@ -8,15 +8,15 @@ public class User_Firebase {
     private String user_number;
     private String user_address;
     private String user_location;
-    private boolean people;
+    private boolean key;
 
     public User_Firebase() {}
-    public User_Firebase(String user_name, String user_number, String user_address, String user_location, boolean is_people) {
+    public User_Firebase(String user_name, String user_number, String user_address, String user_location, boolean key) {
         this.user_name = user_name;
         this.user_number = user_number;
         this.user_address = user_address;
         this.user_location = user_location;
-        this.people = is_people;
+        this.key = key;
     }
 
     public String getUser_name() {
@@ -51,12 +51,12 @@ public class User_Firebase {
         this.user_location = user_location;
     }
 
-    public boolean isPeople() {
-        return people;
+    public boolean isKey() {
+        return key;
     }
 
-    public void setPeople(boolean people) {
-        this.people = people;
+    public void setKey(boolean key) {
+        this.key = key;
     }
 
     public LatLng toLatLngParser(String string){
