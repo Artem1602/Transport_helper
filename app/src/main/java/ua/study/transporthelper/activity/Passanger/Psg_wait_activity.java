@@ -1,10 +1,13 @@
 package ua.study.transporthelper.activity.Passanger;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -102,6 +105,17 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Ви впевнені, що бажаєте видалити свої дані?")
+                .setPositiveButton("Так", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                delete_user_from_FB();
+            }
+        }).setNegativeButton("Ні", null).create();
+    }
+
+    private void delete_user_from_FB()
+    {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference().child(user_number);
         myRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
