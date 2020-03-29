@@ -86,7 +86,7 @@ public class People_login extends AppCompatActivity implements View.OnClickListe
                 User_info.getInstance().setUser_name(name_str.getText().toString());
                 User_info.getInstance().setUser_number(number_str.getText().toString());
                 User_info.getInstance().setUser_address(address_str.getText().toString());
-                User_info.getInstance().setPeople(true);
+                User_info.getInstance().setKey(true);
                 intent = new Intent(this, Psg_map_activity.class);
                 startActivity(intent);
                 break;

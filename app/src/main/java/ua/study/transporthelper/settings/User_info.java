@@ -9,16 +9,16 @@ public class User_info {
     private String user_number;
     private String user_address;
     private LatLng user_location;
-    private boolean people;
+    private boolean key;
 
     private User_info(){}
 
-    public boolean isPeople() {
-        return people;
+    public boolean isKey() {
+        return key;
     }
 
-    public void setPeople(boolean people) {
-        this.people = people;
+    public void setKey(boolean key) {
+        this.key = key;
     }
 
     public String getUser_name() {

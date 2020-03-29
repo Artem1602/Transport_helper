@@ -118,15 +118,15 @@ View.OnClickListener{
         for(DataSnapshot ds : snapshot.getChildren())
         {
             User_Firebase user = ds.getValue(User_Firebase.class);
-            set_marker(user.getUser_name(), user.getUser_address(), user.getUser_number(), user.toLatLngParser(user.getUser_location()),user.isPeople());
+            set_marker(user.getUser_name(), user.getUser_address(), user.getUser_number(), user.toLatLngParser(user.getUser_location()),user.isKey());
         }
     }
 
 
-    private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean is_people) {
+    private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean key) {
         String people = "true";
 
-        if (is_people) {
+        if (key) {
             mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                     .position(marker_position).title(name).snippet(number + "/" + address + "/" + people));
 
@@ -142,7 +142,6 @@ View.OnClickListener{
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-
         return false;
     }
 
@@ -176,7 +175,7 @@ View.OnClickListener{
             final Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse(number));
 
-            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Пояснення: " + marker.getSnippet().split("/")[0] + ". Зателефонувати?")
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Потреба: " + marker.getSnippet().split("/")[0] + ". Зателефонувати?")
                     .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

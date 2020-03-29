@@ -78,7 +78,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
     {
         User_Firebase user_firebase = new User_Firebase(User_info.getInstance().getUser_name(),
                 User_info.getInstance().getUser_number(),User_info.getInstance().getUser_address(),
-                User_info.getInstance().toStringParser(), User_info.getInstance().isPeople());
+                User_info.getInstance().toStringParser(), User_info.getInstance().isKey());
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 

@@ -2,10 +2,18 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/quantum_black_100</item>
-        <item name="colorPrimaryDark">@color/quantum_black_100</item>
-        <item name="colorAccent">@color/quantum_black_100</item>
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+    </style>
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@style/RobotoButtonStyle</item>
+        <item name="android:textColor">@color/quantum_black_100</item>
+    </style>
+
+    <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@style/RobotoButtonStyle</item>
+        <item name="android:textColor">@color/quantum_black_100</item>
     </style>
 
 </resources>
