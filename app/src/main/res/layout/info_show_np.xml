@@ -19,6 +19,7 @@
         android:textColor="@color/quantum_black_text"
         tools:ignore="MissingConstraints"
         android:textAlignment="center"/>
+
     <TextView
         android:textAlignment="center"
         android:textColor="@color/quantum_black_text"
