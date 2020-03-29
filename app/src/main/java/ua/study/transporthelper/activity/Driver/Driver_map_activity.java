@@ -20,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -107,9 +108,14 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
     }
 
 
-    private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean is_people)
-    {
-        mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + "/" + address));
+    private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean is_people) {
+        if (is_people) {
+            mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.color.MyBlue))
+                    .position(marker_position).title(name).snippet(number + "/" + address));
+
+        } else {
+            mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + "/" + address));
+        }
     }
 
     @Override
