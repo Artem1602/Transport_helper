@@ -11,13 +11,16 @@
     tools:ignore="MissingConstraints">
     <TextView
         android:id="@+id/name_info"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="17dp"
+        android:textStyle="bold"
         android:hint="@string/eror"
         android:textColor="@color/quantum_black_text"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textAlignment="center"/>
     <TextView
+        android:textAlignment="center"
         android:textColor="@color/quantum_black_text"
         android:id="@+id/number_info"
         android:hint="@string/eror"
@@ -26,11 +29,12 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
     <TextView
+        android:textAlignment="center"
         android:hint="@string/eror"
         android:id="@+id/info_info"
         android:textSize="17dp"
         android:textColor="@color/quantum_black_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
 </LinearLayout>
