@@ -123,10 +123,10 @@ View.OnClickListener{
     }
 
 
-    private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean key) {
+    private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean is_people) {
         String people = "true";
 
-        if (key) {
+        if (is_people) {
             mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                     .position(marker_position).title(name).snippet(number + "/" + address + "/" + people));
 
@@ -142,6 +142,7 @@ View.OnClickListener{
 
     @Override
     public boolean onMarkerClick(Marker marker) {
+
         return false;
     }
 
@@ -175,7 +176,7 @@ View.OnClickListener{
             final Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse(number));
 
-            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Потреба: " + marker.getSnippet().split("/")[0] + ". Зателефонувати?")
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Пояснення: " + marker.getSnippet().split("/")[0] + ". Зателефонувати?")
                     .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
