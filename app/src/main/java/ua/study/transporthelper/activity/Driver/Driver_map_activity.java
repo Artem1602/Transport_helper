@@ -102,11 +102,11 @@ public class Driver_map_activity extends FragmentActivity implements OnMapReadyC
         for(DataSnapshot ds : snapshot.getChildren())
         {
             User_Firebase user = ds.getValue(User_Firebase.class);
-//            set_marker(user.getUser_name(), user.getUser_address(), user.getUser_number(), user.toLatLngParser(user.getUser_location()));
+            set_marker(user.getUser_name(), user.getUser_address(), user.getUser_number(), user.toLatLngParser(user.getUser_location()),user.isPeople());
         }
     }
 
-    //TODO
+
     private  void set_marker(String name,String number ,String address, LatLng marker_position, boolean is_people)
     {
         mMap.addMarker(new MarkerOptions().position(marker_position).title(name).snippet(number + "/" + address));

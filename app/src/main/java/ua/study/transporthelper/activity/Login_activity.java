@@ -14,11 +14,13 @@ import android.widget.Button;
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.activity.Driver.Driver_map_activity;
 import ua.study.transporthelper.activity.Passanger.Psg_login_activity;
+import ua.study.transporthelper.activity.People.People_login;
 
 public class Login_activity extends AppCompatActivity implements View.OnClickListener{
 
     private Button passenger_btn;
     private  Button driver_btn;
+    private  Button people_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
 
         driver_btn = findViewById(R.id.driver_btn);
         driver_btn.setOnClickListener(this);
+
+        people_btn = findViewById(R.id.people_btn);
+        people_btn.setOnClickListener(this);
 
         checkPermission();
 
@@ -63,10 +68,13 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
             case R.id.driver_btn:
                 intent = new Intent(this, Driver_map_activity.class);
                 startActivity(intent);
-
                 break;
             case R.id.passenger_btn:
                 intent = new Intent(this, Psg_login_activity.class);
+                startActivity(intent);
+                break;
+            case R.id.people_btn:
+                intent = new Intent(this, People_login.class);
                 startActivity(intent);
                 break;
         }

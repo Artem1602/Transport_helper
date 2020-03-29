@@ -30,6 +30,7 @@ public class People_login extends AppCompatActivity implements View.OnClickListe
         number_str = findViewById(R.id.number_str);
         number_str.setSelection(number_str.getText().length());
         address_str = findViewById(R.id.address_str);
+        address_str.setHint("Чим вам треба допомогти?");
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
         number_str.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -85,6 +86,7 @@ public class People_login extends AppCompatActivity implements View.OnClickListe
                 User_info.getInstance().setUser_name(name_str.getText().toString());
                 User_info.getInstance().setUser_number(number_str.getText().toString());
                 User_info.getInstance().setUser_address(address_str.getText().toString());
+                User_info.getInstance().setPeople(true);
                 intent = new Intent(this, Psg_map_activity.class);
                 startActivity(intent);
                 break;

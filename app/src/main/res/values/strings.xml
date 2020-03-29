@@ -5,8 +5,8 @@
     <string name="user_name">Як до вас звертатись?</string>
     <string name="user_number">Ваш номер телефону</string>
     <string name="login_accept_btn">Розміститися</string>
-    <string name="waiter">\tОчікуйте на дзвінок від водія та завчасно обговоріть місце зустрічі.</string>
-    <string name="finder">\tЯкщо ви вже сконтактували з водієм, натисніть на кнопку "Підтвердити виклик"</string>
+    <string name="waiter">\tОчікуйте на дзвінок від волонтера та завчасно обговоріть місце зустрічі.</string>
+    <string name="finder">\tЯкщо ви вже сконтактували з волонтером, натисніть на кнопку "Підтвердити виклик"</string>
     <string name="confirm">Підтвердити</string>
     <string name="notification">\t Після того, як ви натиснете на кнопку "Продовжити", вас буде переміщено на карту. Розмістіть точку там, де вам буде зручно очікувати машину.</string>
     <string name="fill_all_fields">Заповніть всі поля</string>
