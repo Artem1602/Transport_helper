@@ -59,6 +59,6 @@
 
         <activity android:name=".activity.Driver.Drv_info_activity"
             android:screenOrientation="portrait"/>
-    </application>
 
+    </application>
 </manifest>
