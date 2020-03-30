@@ -30,7 +30,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_weight="1"
-        android:background="@mipmap/driver"
+        android:background="@mipmap/driver_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -59,7 +59,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
-        android:background="@mipmap/ic_launcher_foreground"
+        android:background="@mipmap/passenger_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 

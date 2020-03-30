@@ -61,8 +61,6 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
         return false;
     }
 
-
-
     @Override
     public void onClick(View v) {
         Intent intent;

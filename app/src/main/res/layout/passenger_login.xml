@@ -109,6 +109,7 @@
         android:paddingTop="450dp"
         tools:ignore="MissingConstraints">
         <TextView
+            android:id="@+id/text_pass"
             android:layout_width="wrap_content"
             android:text="@string/notification"
             android:textSize="21sp"

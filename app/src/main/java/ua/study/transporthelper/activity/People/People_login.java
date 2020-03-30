@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -19,7 +20,7 @@ public class People_login extends AppCompatActivity implements View.OnClickListe
     private EditText number_str;
     private EditText address_str;
     private Button set_place_btn;
-
+    private TextView text;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -31,6 +32,8 @@ public class People_login extends AppCompatActivity implements View.OnClickListe
         number_str.setSelection(number_str.getText().length());
         address_str = findViewById(R.id.address_str);
         address_str.setHint("Чим вам треба допомогти?");
+        text = findViewById(R.id.text_pass);
+        text.setText("\t Після того, як ви заповнили всі полія інформації, натисніть на кнопку Продовжити, вас буде переміщено на карту. Розмістіть точку там, де вам буде зручно очікувати волонтера.");
         set_place_btn = findViewById(R.id.set_place_btn);
         set_place_btn.setOnClickListener(this);
         number_str.setOnFocusChangeListener(new View.OnFocusChangeListener() {
