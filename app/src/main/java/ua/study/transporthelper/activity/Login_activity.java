@@ -21,6 +21,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
     private Button passenger_btn;
     private  Button driver_btn;
     private  Button people_btn;
+    private Button info_btn_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,9 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
 
         people_btn = findViewById(R.id.people_btn);
         people_btn.setOnClickListener(this);
+
+        info_btn_login = findViewById(R.id.login_info_btn);
+        info_btn_login.setOnClickListener(this);
 
         checkPermission();
 
@@ -75,6 +79,10 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.people_btn:
                 intent = new Intent(this, People_login.class);
+                startActivity(intent);
+                break;
+            case R.id.login_info_btn:
+                intent = new Intent(this, Info_activity.class);
                 startActivity(intent);
                 break;
         }
