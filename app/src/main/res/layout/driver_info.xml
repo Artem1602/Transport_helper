@@ -36,6 +36,7 @@
                 android:layout_width="400px"
                 android:layout_height="400px"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 app:srcCompat="@drawable/blue_marker" />
 
             <TextView
@@ -63,6 +64,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="5dp"
                 android:text="@string/red_marker"
 
                 android:textSize="18sp" />
@@ -73,6 +75,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
+                android:layout_marginBottom="25dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_set_psg"
                 android:text="@string/back" />
