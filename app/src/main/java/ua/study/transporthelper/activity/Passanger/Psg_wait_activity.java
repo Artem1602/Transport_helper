@@ -42,7 +42,6 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +50,6 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         entered_name_str = findViewById(R.id.entered_name_str);
         entered_number_str = findViewById(R.id.entered_number_str);
         entered_addres_str = findViewById(R.id.entered_adress_str);
-        entered_addres_str.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
         find_car_btn = findViewById(R.id.find_car_btn);
         find_car_btn.setOnClickListener(this);
 
