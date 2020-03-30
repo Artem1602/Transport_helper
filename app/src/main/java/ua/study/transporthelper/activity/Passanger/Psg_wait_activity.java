@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +42,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         entered_name_str = findViewById(R.id.entered_name_str);
         entered_number_str = findViewById(R.id.entered_number_str);
         entered_addres_str = findViewById(R.id.entered_adress_str);
+        entered_addres_str.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
         find_car_btn = findViewById(R.id.find_car_btn);
         find_car_btn.setOnClickListener(this);
 

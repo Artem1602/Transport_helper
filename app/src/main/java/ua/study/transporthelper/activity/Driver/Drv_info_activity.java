@@ -17,8 +17,6 @@ import ua.study.transporthelper.R;
 //TODO Написать обьснение волонтеру по карте
 public class Drv_info_activity extends AppCompatActivity implements View.OnClickListener {
     private Button back_btn;
-    private TextView blue_marker_tv;
-    private TextView red_marker_tv;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,11 +25,6 @@ public class Drv_info_activity extends AppCompatActivity implements View.OnClick
 
         back_btn = findViewById(R.id.back_btn);
         back_btn.setOnClickListener(this);
-//
-//        blue_marker_tv = findViewById(R.id.blue_marker_tv);
-//        blue_marker_tv.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
-//        red_marker_tv = findViewById(R.id.red_marker_tv);
-//        red_marker_tv.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
     }
 
     @Override
