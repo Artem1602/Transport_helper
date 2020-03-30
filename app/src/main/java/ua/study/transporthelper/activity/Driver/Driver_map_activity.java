@@ -208,6 +208,6 @@ View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-
+        startActivity(new Intent(this,Drv_info_activity.class));
     }
 }

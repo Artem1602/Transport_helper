@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints">
-    <TextView
-        android:id="@+id/name_info_np"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:hint="@string/error"
-        android:textColor="@color/quantum_black_text"
-        tools:ignore="MissingConstraints"
-        android:textAlignment="center"/>
 
-    <TextView
-        android:textAlignment="center"
-        android:textColor="@color/quantum_black_text"
-        android:id="@+id/number_info_np"
-        android:hint="@string/error"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:textSize="17sp"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
-</LinearLayout>
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/name_info_np"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/error"
+            android:textAlignment="center"
+            android:textColor="@color/quantum_black_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/number_info_np"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/error"
+            android:textAlignment="center"
+            android:textColor="@color/quantum_black_text"
+            android:textSize="17sp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
