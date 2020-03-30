@@ -15,5 +15,6 @@ public class Drv_info_activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.driver_info);
+        String s = new String("DDDSSFSDF");
     }
 }

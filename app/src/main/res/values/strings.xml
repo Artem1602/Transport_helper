@@ -33,4 +33,6 @@
     <string name="info">Інформація</string>
     <string name="needs">Потреба</string>
     <string name="call">Зателефонувати?</string>
+
+    <string name="blue_marker"><p> Синій маркер</p> - маркер який позначає людину, яка потребує допомоги, якщо натиснути на нього вам буде></string>
 </resources>

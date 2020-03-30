@@ -52,6 +52,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.People.People_login"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activity.Driver.Drv_info_activity"/>
     </application>
 
 </manifest>
