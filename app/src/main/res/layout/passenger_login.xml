@@ -1,122 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#ECEEF2">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:paddingTop="120dp"
-            android:text="Ваші дані:"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="35sp"
-            android:textStyle="normal" />
-    </LinearLayout>
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      android:paddingTop="180dp"
-       android:orientation="vertical"
-       tools:ignore="MissingConstraints">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:paddingTop="120dp"
+                android:text="Ваші дані:"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="35sp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="normal" />
 
-       <EditText
-           android:id="@+id/name_str"
-           android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginLeft="20dp"
-           android:layout_marginRight="20dp"
-           android:background="@drawable/edit_field"
-           android:fontFamily="@font/roboto"
-           android:hint="@string/user_name"
-           android:lines="1"
-           android:maxLength="20"
-           android:singleLine="true"
-           android:textAlignment="center"
-           android:textSize="25sp" />
+            <EditText
+                android:id="@+id/name_str"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_field"
+                android:fontFamily="@font/roboto"
+                android:hint="@string/user_name"
+                android:lines="1"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-       <EditText
-           android:id="@+id/number_str"
-           android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginLeft="20dp"
-           android:layout_marginTop="20dp"
-           
-           android:layout_marginRight="20dp"
-           android:background="@drawable/edit_field"
-           android:fontFamily="@font/roboto"
-           android:hint="@string/number_example"
+            <EditText
+                android:id="@+id/number_str"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
 
-           android:inputType="phone|number"
-           android:lines="1"
-           android:maxLength="13"
-           android:maxLines="1"
-           android:singleLine="true"
-           android:textAlignment="center"
-           android:textSize="25sp" />
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edit_field"
+                android:fontFamily="@font/roboto"
+                android:hint="@string/number_example"
 
-       <EditText
-           android:id="@+id/address_str"
-           android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginLeft="20dp"
-           android:layout_marginTop="20dp"
-           android:layout_marginRight="20dp"
-           android:background="@drawable/edit_field"
-           android:fontFamily="@font/roboto"
-           android:hint="@string/address"
-           android:lines="1"
-           android:maxLines="1"
-           android:paddingLeft="10dp"
-           android:paddingRight="10dp"
-           android:singleLine="true"
-           android:textAlignment="center"
-           android:textSize="25sp" />
-     </LinearLayout>
+                android:inputType="phone|number"
+                android:lines="1"
+                android:maxLength="13"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingTop="375dp"
-        android:paddingRight="20dp"
-        tools:ignore="MissingConstraints">
-        <Button
-            android:id="@+id/set_place_btn"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/button_set_psg"
-            android:fontFamily="@font/roboto"
-            android:text="Продовжити"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="450dp"
-        tools:ignore="MissingConstraints">
-        <TextView
-            android:id="@+id/text_pass"
-            android:layout_width="wrap_content"
-            android:text="@string/notification"
-            android:textSize="21sp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/address_str"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
 
-        </TextView>
-    </LinearLayout>
+                android:background="@drawable/edit_field"
+                android:fontFamily="@font/roboto"
+                android:hint="@string/address"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:inputType="textMultiLine"
+                android:minLines="1"
+
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/set_place_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_set_psg"
+                android:fontFamily="@font/roboto"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Продовжити"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/text_pass"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/notification"
+                android:textSize="21sp">
+
+            </TextView>
+        </LinearLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
