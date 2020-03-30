@@ -31,6 +31,7 @@
             android:label="@string/Map"
             android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".activity.Passanger.Psg_map_activity"
             android:label="@string/Map"
@@ -46,13 +47,18 @@
         </activity>
         <activity android:name=".activity.Login_activity"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".activity.Passanger.Psg_login_activity"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".activity.Passanger.Psg_wait_activity"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".activity.People.People_login"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.Driver.Drv_info_activity"/>
+
+        <activity android:name=".activity.Driver.Drv_info_activity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
