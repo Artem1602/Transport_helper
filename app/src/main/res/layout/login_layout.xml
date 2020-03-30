@@ -44,7 +44,7 @@
         android:layout_marginStart="133dp"
         android:layout_marginEnd="128dp"
         android:layout_weight="1"
-        android:background="@mipmap/ic_launcher_foreground"
+        android:background="@mipmap/help_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
