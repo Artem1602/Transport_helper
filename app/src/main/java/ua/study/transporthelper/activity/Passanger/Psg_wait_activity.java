@@ -5,10 +5,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Layout;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,13 +16,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.Shared_preferences;
@@ -37,6 +39,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
     private TextView entered_addres_str;
     private Button find_car_btn;
     private String user_number;
+
 
     //FIREBASE
     private FirebaseDatabase database;
@@ -79,9 +82,12 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
     }
     private void save_into_firebase()
     {
+        Date d = new Date();
+        String s  = new String(DateFormat.format("d,MM,yy", d.getTime()).toString());
+        
         User_Firebase user_firebase = new User_Firebase(User_info.getInstance().getUser_name(),
                 User_info.getInstance().getUser_number(),User_info.getInstance().getUser_address(),
-                User_info.getInstance().toStringParser(), User_info.getInstance().isKey());
+                User_info.getInstance().toStringParser(), User_info.getInstance().isKey(),s);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 

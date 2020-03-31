@@ -64,8 +64,8 @@ public class Psg_map_activity extends FragmentActivity implements OnMapReadyCall
         settings.setMyLocationButtonEnabled(true);
         settings.setCompassEnabled(true);
 
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(51.490898, 31.298577)));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(5));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.4501, 30.5234)));
     }
 
 

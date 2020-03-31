@@ -41,7 +41,6 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
         info_btn_login.setOnClickListener(this);
 
         checkPermission();
-
     }
 
     private void checkPermission() {
