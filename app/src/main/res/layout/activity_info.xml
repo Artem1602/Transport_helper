@@ -53,5 +53,15 @@
             android:layout_marginBottom="20dp"
             android:textSize="18sp"
             android:autoLink="web"/>
+        <Button
+            android:id="@+id/info_back_btn"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="25dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_set_psg"
+            android:text="@string/back" />
     </LinearLayout>
 </ScrollView>

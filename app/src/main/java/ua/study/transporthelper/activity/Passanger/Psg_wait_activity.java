@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.format.DateFormat;
@@ -23,7 +22,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import ua.study.transporthelper.R;

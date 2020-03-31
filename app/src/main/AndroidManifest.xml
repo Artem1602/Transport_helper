@@ -29,7 +29,8 @@
         <activity
             android:name=".activity.Driver.Driver_map_activity"
             android:label="@string/Map"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".activity.Passanger.Psg_map_activity"
             android:label="@string/Map"
@@ -57,6 +58,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.Driver.Drv_info_activity"
+
             android:screenOrientation="portrait" />
     </application>
 

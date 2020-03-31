@@ -176,7 +176,7 @@ View.OnClickListener{
             final Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse(number));
 
-            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Пояснення: " + marker.getSnippet().split("/")[0] + ". Зателефонувати?")
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage("Потреба: " + marker.getSnippet().split("/")[0] + ". Зателефонувати?")
                     .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
