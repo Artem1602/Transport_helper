@@ -16,9 +16,9 @@ public class Info_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
-        developer_2 = findViewById(R.id.developer_2);
-        developer_2.setMovementMethod(LinkMovementMethod.getInstance());
-        developer_3 = findViewById(R.id.developer_3);
-        developer_3.setMovementMethod(LinkMovementMethod.getInstance());
+//        developer_2 = findViewById(R.id.developer_2);
+//        developer_2.setMovementMethod(LinkMovementMethod.getInstance());
+//        developer_3 = findViewById(R.id.developer_3);
+//        developer_3.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }

@@ -24,8 +24,8 @@
             android:id="@+id/developer_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="25dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:text="@string/developers_1"
             android:layout_marginBottom="20dp"
@@ -38,7 +38,9 @@
             android:layout_marginLeft="25dp"
             android:layout_weight="1"
             android:text="@string/developers_2"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:autoLink="web"
+            />
         <TextView
             android:id="@+id/developer_3"
             android:layout_width="wrap_content"
@@ -48,6 +50,7 @@
             android:layout_weight="1"
             android:text="@string/developers_3"
             android:layout_marginBottom="20dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:autoLink="web"/>
     </LinearLayout>
 </ScrollView>
