@@ -78,6 +78,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
             save_into_firebase();
         }
     }
+
     private void save_into_firebase()
     {
         Date d = new Date();
