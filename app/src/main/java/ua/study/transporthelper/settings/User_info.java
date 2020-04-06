@@ -64,7 +64,7 @@ public class User_info {
         return number;
     }
 
-    public String toStringParser() {
+    public String LatlngStringParser() {
         String result;
         Double latitude = user_location.latitude;
         Double longitude = user_location.longitude;

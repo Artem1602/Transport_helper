@@ -70,7 +70,7 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
         }else {
             entered_name_str.setText(User_info.getInstance().getUser_name());
             entered_number_str.setText(User_info.getInstance().getUser_number());
-            entered_addres_str.setText(User_info.getInstance().getUser_address());
+            entered_addres_str.setText(User_info.getInstance().getUser_address().trim().replaceAll(" +"," "));
             user_number = User_info.getInstance().getUser_number();
         }
         if(!is_register)
@@ -81,11 +81,11 @@ public class Psg_wait_activity extends AppCompatActivity implements View.OnClick
     private void save_into_firebase()
     {
         Date d = new Date();
-        String s  = new String(DateFormat.format("d,MM,yy", d.getTime()).toString());
+        String s  = DateFormat.format("d,MM,yy", d.getTime()).toString();
         
         User_Firebase user_firebase = new User_Firebase(User_info.getInstance().getUser_name(),
-                User_info.getInstance().getUser_number(),User_info.getInstance().getUser_address(),
-                User_info.getInstance().toStringParser(), User_info.getInstance().isKey(),s);
+                User_info.getInstance().getUser_number(),User_info.getInstance().getUser_address().trim().replaceAll(" +", " "),
+                User_info.getInstance().LatlngStringParser(), User_info.getInstance().isKey(),s);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 
