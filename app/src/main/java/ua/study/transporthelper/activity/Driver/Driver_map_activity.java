@@ -82,25 +82,15 @@ View.OnClickListener{
 
             @Override
             public View getInfoContents(Marker marker) {
-                if (3 == marker.getSnippet().split("/").length) {
-                    View v = getLayoutInflater().inflate(R.layout.info_show_np,null);
-                    TextView name = v.findViewById(R.id.name_info_np);
-                    TextView number = v.findViewById(R.id.number_info_np);
-                    name.setText(marker.getTitle());
-                    number.setText(marker.getSnippet().split("/")[1]);
-                    return v;
-                } else {
-
-                    View v = getLayoutInflater().inflate(R.layout.info_show_p,null);
-                    TextView name = v.findViewById(R.id.name_info);
-                    TextView number = v.findViewById(R.id.number_info);
-                    TextView info = v.findViewById(R.id.info_info);
-                    name.setText(marker.getTitle());
-                    number.setText(marker.getSnippet().split("/")[0]);
-                    info.setText(marker.getSnippet().split("/")[1]);
-                    return v;
-                }
-
+                View v;
+                v = getLayoutInflater().inflate(R.layout.info_show_p,null);
+                TextView name = v.findViewById(R.id.name_info);
+                TextView number = v.findViewById(R.id.number_info);
+                TextView info = v.findViewById(R.id.info_info);
+                name.setText(marker.getTitle());
+                number.setText(marker.getSnippet().split("/")[0]);
+                info.setText(marker.getSnippet().split("/")[1]);
+                return v;
             }
         });
 
