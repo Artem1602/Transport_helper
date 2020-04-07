@@ -45,7 +45,7 @@
         android:layout_marginTop="192dp"
         android:layout_marginEnd="128dp"
         android:layout_weight="1"
-        android:background="@mipmap/help_foreground"
+        android:background="@mipmap/voloneer_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

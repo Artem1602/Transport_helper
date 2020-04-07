@@ -88,11 +88,23 @@
                 android:textAlignment="center"
                 android:textSize="25sp" />
 
+            <TextView
+                android:id="@+id/text_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/notification"
+                android:textSize="21sp">
+
+            </TextView>
+
             <Button
                 android:id="@+id/set_place_btn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/button_set_psg"
                 android:fontFamily="@font/roboto"
 
@@ -104,17 +116,6 @@
                 android:textColor="@android:color/white"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/text_pass"
-                android:layout_width="wrap_content"
-                android:layout_marginTop="13dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text="@string/notification"
-                android:textSize="21sp">
-
-            </TextView>
         </LinearLayout>
 
     </ScrollView>
