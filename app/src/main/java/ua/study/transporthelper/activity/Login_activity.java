@@ -14,11 +14,13 @@ import android.widget.Button;
 import ua.study.transporthelper.R;
 import ua.study.transporthelper.activity.Driver.Driver_map_activity;
 import ua.study.transporthelper.activity.Passanger.Psg_login_activity;
-import ua.study.transporthelper.activity.People.People_login;
+import ua.study.transporthelper.activity.Volunteer.Volunteer_login;
+import ua.study.transporthelper.activity.Volunteer.Volunteer_map_activity;
 
 public class Login_activity extends AppCompatActivity implements View.OnClickListener{
 
     private Button passenger_btn;
+    private Button volunteer_btn;
     private  Button driver_btn;
     private  Button people_btn;
     private Button info_btn_login;
@@ -39,6 +41,9 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
 
         info_btn_login = findViewById(R.id.login_info_btn);
         info_btn_login.setOnClickListener(this);
+
+        volunteer_btn = findViewById(R.id.volenteer_btn);
+        volunteer_btn.setOnClickListener(this);
 
         checkPermission();
     }
@@ -77,11 +82,15 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.people_btn:
-                intent = new Intent(this, People_login.class);
+                intent = new Intent(this, Volunteer_login.class);
                 startActivity(intent);
                 break;
             case R.id.login_info_btn:
                 intent = new Intent(this, Info_activity.class);
+                startActivity(intent);
+                break;
+            case R.id.volenteer_btn:
+                intent = new Intent(this, Volunteer_map_activity.class);
                 startActivity(intent);
                 break;
         }

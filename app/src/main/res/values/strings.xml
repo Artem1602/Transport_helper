@@ -60,4 +60,5 @@
     <string name="developers_3">За допомогою можна звернутися у телеграм групу: t.me/transport_helper</string>
     <string name="your_data">Ваші дані:</string>
     <string name="accept_call">Підтвредити виклик</string>
+    <string name="title_activity_volunteer_activity">Map</string>
 </resources>

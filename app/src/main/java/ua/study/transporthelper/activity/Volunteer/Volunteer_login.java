@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.People;
+package ua.study.transporthelper.activity.Volunteer;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import ua.study.transporthelper.R;
 import ua.study.transporthelper.activity.Passanger.Psg_map_activity;
 import ua.study.transporthelper.settings.User_info;
 
-public class People_login extends AppCompatActivity implements View.OnClickListener  {
+public class Volunteer_login extends AppCompatActivity implements View.OnClickListener  {
     private EditText name_str;
     private EditText number_str;
     private EditText address_str;
