@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.Driver;
+package ua.study.behome.activity.Driver;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import ua.study.transporthelper.R;
+import ua.study.behome.R;
 
 public class Drv_info_activity extends AppCompatActivity implements View.OnClickListener {
     private Button back_btn;

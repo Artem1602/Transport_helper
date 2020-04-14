@@ -6,8 +6,8 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "ua.study.transporthelper"
-        minSdkVersion 21
+        applicationId "ua.study.behome"
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

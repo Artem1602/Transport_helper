@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.Volunteer;
+package ua.study.behome.activity.Volunteer;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import ua.study.transporthelper.R;
-import ua.study.transporthelper.activity.Passanger.Psg_map_activity;
-import ua.study.transporthelper.settings.User_info;
+import ua.study.behome.R;
+import ua.study.behome.activity.Passanger.Psg_map_activity;
+import ua.study.behome.settings.User_info;
 
 public class Volunteer_login extends AppCompatActivity implements View.OnClickListener  {
     private EditText name_str;

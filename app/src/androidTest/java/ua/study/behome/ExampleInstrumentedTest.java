@@ -1,4 +1,4 @@
-package ua.study.transporthelper;
+package ua.study.behome;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("ua.study.transporthelper", appContext.getPackageName());
+        assertEquals("ua.study.behome", appContext.getPackageName());
     }
 }

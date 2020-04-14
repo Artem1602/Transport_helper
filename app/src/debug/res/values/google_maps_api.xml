@@ -4,12 +4,12 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=AD:97:BA:4B:25:0E:F5:F9:06:DE:B7:FE:A8:0D:30:42:AA:66:24:AB%3Bua.study.transporthelper
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=AD:97:BA:4B:25:0E:F5:F9:06:DE:B7:FE:A8:0D:30:42:AA:66:24:AB%3Bua.study.behome
 
     You can also add your credentials to an existing key, using these values:
 
     Package name:
-    ua.study.transporthelper
+    ua.study.behome
 
     SHA-1 certificate fingerprint:
     AD:97:BA:4B:25:0E:F5:F9:06:DE:B7:FE:A8:0D:30:42:AA:66:24:AB

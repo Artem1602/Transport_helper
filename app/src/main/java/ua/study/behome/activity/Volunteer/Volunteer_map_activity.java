@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.Volunteer;
+package ua.study.behome.activity.Volunteer;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -30,9 +30,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import ua.study.transporthelper.R;
-import ua.study.transporthelper.activity.Driver.Drv_info_activity;
-import ua.study.transporthelper.settings.User_Firebase;
+import ua.study.behome.R;
+import ua.study.behome.activity.Driver.Drv_info_activity;
+import ua.study.behome.settings.User_Firebase;
 
 public class Volunteer_map_activity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnInfoWindowClickListener {
 

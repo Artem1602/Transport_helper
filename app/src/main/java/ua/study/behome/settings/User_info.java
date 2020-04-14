@@ -1,4 +1,4 @@
-package ua.study.transporthelper.settings;
+package ua.study.behome.settings;
 
 import com.google.android.gms.maps.model.LatLng;
 

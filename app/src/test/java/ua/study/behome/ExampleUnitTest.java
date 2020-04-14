@@ -1,4 +1,4 @@
-package ua.study.transporthelper;
+package ua.study.behome;
 
 import org.junit.Test;
 

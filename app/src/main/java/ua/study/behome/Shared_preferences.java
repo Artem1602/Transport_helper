@@ -1,4 +1,4 @@
-package ua.study.transporthelper;
+package ua.study.behome;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,9 +8,9 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-import ua.study.transporthelper.activity.Login_activity;
-import ua.study.transporthelper.activity.Passanger.Psg_wait_activity;
-import ua.study.transporthelper.settings.User_info;
+import ua.study.behome.activity.Login_activity;
+import ua.study.behome.activity.Passanger.Psg_wait_activity;
+import ua.study.behome.settings.User_info;
 
 public class Shared_preferences extends Activity {
     public static final String MY_SETTINGS = "settings";

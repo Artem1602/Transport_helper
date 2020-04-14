@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.Passanger;
+package ua.study.behome.activity.Passanger;
 
 
 import androidx.fragment.app.FragmentActivity;
@@ -22,8 +22,8 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import ua.study.transporthelper.R;
-import ua.study.transporthelper.settings.User_info;
+import ua.study.behome.R;
+import ua.study.behome.settings.User_info;
 
 public class Psg_map_activity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMapClickListener{
 

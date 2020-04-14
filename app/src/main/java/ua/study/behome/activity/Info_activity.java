@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity;
+package ua.study.behome.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import ua.study.transporthelper.R;
+import ua.study.behome.R;
 
 public class Info_activity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package ua.study.transporthelper.activity.Passanger;
+package ua.study.behome.activity.Passanger;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -24,11 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Date;
 
-import ua.study.transporthelper.R;
-import ua.study.transporthelper.Shared_preferences;
-import ua.study.transporthelper.activity.Login_activity;
-import ua.study.transporthelper.settings.User_Firebase;
-import ua.study.transporthelper.settings.User_info;
+import ua.study.behome.R;
+import ua.study.behome.Shared_preferences;
+import ua.study.behome.activity.Login_activity;
+import ua.study.behome.settings.User_Firebase;
+import ua.study.behome.settings.User_info;
 
 public class Psg_wait_activity extends AppCompatActivity implements View.OnClickListener {
 
