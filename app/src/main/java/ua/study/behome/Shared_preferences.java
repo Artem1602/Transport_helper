@@ -19,7 +19,6 @@ public class Shared_preferences extends Activity {
     public static final String NAME_KEY = "user_name";
     public static final String ADDRESS_KEY = "user_address";
 
-
     private boolean has_register;
 
     @Override
