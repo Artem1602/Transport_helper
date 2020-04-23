@@ -63,4 +63,6 @@
     <string name="title_activity_volunteer_activity">Map</string>
     <string name="gps_error">Дана програма не буде коректно працювати без дозволу до вашої геолокації</string>
     <string name="allow">Надати доступ</string>
+    <string name="t_covid_19">\tНКВолонтери - всеукраїнський волонтерський проект Національного Корпусу по гуманітарній допомозі людям з групи ризику та медпрацівникам в реалізації їхньої праці під час карантину через пандемію коронавірусу (COVID-19).</string>
+    <string name="partnerus">Наші партнери</string>
 </resources>

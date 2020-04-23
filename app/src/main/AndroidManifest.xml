@@ -47,7 +47,8 @@
         <activity
             android:name=".activity.Driver.Driver_map_activity"
             android:label="@string/Map"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name="ua.study.behome.activity.Passanger.Psg_map_activity"
             android:label="@string/Map"
@@ -75,6 +76,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="ua.study.behome.activity.Driver.Drv_info_activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ua.study.behome.activity.Partners.Partners"
             android:screenOrientation="portrait" />
     </application>
 

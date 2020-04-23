@@ -15,6 +15,7 @@ import android.widget.Button;
 
 import ua.study.behome.R;
 import ua.study.behome.activity.Driver.Driver_map_activity;
+import ua.study.behome.activity.Partners.Partners;
 import ua.study.behome.activity.Passanger.Psg_login_activity;
 import ua.study.behome.activity.Volunteer.Volunteer_login;
 import ua.study.behome.activity.Volunteer.Volunteer_map_activity;
@@ -90,7 +91,7 @@ public class Login_activity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.login_info_btn:
-                intent = new Intent(this, Info_activity.class);
+                intent = new Intent(this, Partners.class);
                 startActivity(intent);
                 break;
             case R.id.volenteer_btn:
