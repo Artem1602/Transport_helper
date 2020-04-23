@@ -1,6 +1,9 @@
 package ua.study.behome.activity.Volunteer;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,9 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import ua.study.behome.R;
+import ua.study.behome.activity.Login_activity;
 import ua.study.behome.activity.Passanger.Psg_map_activity;
 import ua.study.behome.settings.User_info;
 
@@ -70,9 +77,21 @@ public class Volunteer_login extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         Intent intent;
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage(R.string.gps_error)
+                .setPositiveButton(R.string.allow, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.requestPermissions(Volunteer_login.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+                    }
+                }).create();
         switch (v.getId())
         {
             case R.id.set_place_btn:
+                if(ContextCompat.checkSelfPermission(Volunteer_login.this ,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+                {
+                    alertDialog.show();
+                    break;
+                }
                 //Запись полей
                 if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty()||address_str.getText().toString().isEmpty())
                 {

@@ -1,6 +1,10 @@
 package ua.study.behome.activity.Passanger;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,8 +13,11 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import ua.study.behome.R;
+import ua.study.behome.activity.Login_activity;
 import ua.study.behome.settings.User_info;
 
 public class Psg_login_activity extends AppCompatActivity implements View.OnClickListener {
@@ -64,10 +71,22 @@ public class Psg_login_activity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         Intent intent;
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setMessage(R.string.gps_error)
+                .setPositiveButton(R.string.allow, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.requestPermissions(Psg_login_activity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+                    }
+                }).create();
         switch (v.getId())
         {
             case R.id.set_place_btn:
                 //Запись полей
+                if(ContextCompat.checkSelfPermission(Psg_login_activity.this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+                {
+                    alertDialog.show();
+                    break;
+                }
                 if(name_str.getText().toString().isEmpty() || number_str.getText().toString().isEmpty()||address_str.getText().toString().isEmpty())
                 {
                     Toast.makeText(this,R.string.fill_all_fields,Toast.LENGTH_LONG).show();
